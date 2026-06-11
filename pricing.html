@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>PRICING | PERFECT PARADOX LTD</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<script>
+tailwind.config = {
+  darkMode: "class",
+  theme: {
+    extend: {
+      colors: {
+        "background": "#131313",
+        "surface": "#131313",
+        "surface-container-low": "#1c1b1b",
+        "surface-container-lowest": "#0e0e0e",
+        "on-surface": "#e5e2e1",
+        "primary": "#ffffff",
+        "outline": "#919191",
+        "outline-variant": "#474747",
+      },
+      fontFamily: {
+        "headline": ["Space Grotesk"],
+        "body": ["JetBrains Mono"],
+      },
+      borderRadius: {"DEFAULT": "0px", "lg": "0px", "xl": "0px", "full": "0px"},
+    },
+  },
+}
+</script>
+<style>
+body {
+  background-color: #131313;
+  color: #e5e2e1;
+  font-family: 'JetBrains Mono', monospace;
+}
+.digital-grain {
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+  opacity: 0.02;
+  pointer-events: none;
+}
+</style>
+</head>
+<body>
+<div class="fixed inset-0 digital-grain z-50"></div>
+
+<!-- Nav -->
+
+<nav class="bg-[#131313] text-[#FFFFFF] font-['Space_Grotesk'] uppercase tracking-[0.2em] text-sm fixed w-full z-40 flex justify-between items-center px-12 py-6">
+  <a href="index.html" class="text-2xl font-bold tracking-tighter text-[#FFFFFF]">MONOLITH.PROTOCOL</a>
+  <a href="index.html" class="text-[#919191] hover:text-[#FFFFFF] transition-colors flex items-center gap-2">
+    <span class="material-symbols-outlined text-sm">arrow_back</span> BACK TO SYSTEM
+  </a>
+</nav>
+
+<main class="pt-32 pb-24 px-8 md:px-16 lg:px-24 max-w-5xl mx-auto relative z-10">
+
+  <div class="mb-4 font-body text-xs text-outline uppercase tracking-[0.3em]">SYSTEM_DIRECTORIES / PRICING.SYS</div>
+  <h1 class="font-headline font-bold text-5xl md:text-7xl uppercase tracking-tighter mb-4 text-primary">SOFTWARE<br/>&amp; PRICING</h1>
+  <div class="h-[1px] bg-outline-variant/30 my-8"></div>
+  <p class="font-body text-sm text-outline mb-4">One-time pricing. No subscriptions. No telemetry.</p>
+  <p class="font-body text-sm text-on-surface/80 mb-12 max-w-2xl">Perfect Paradox builds native macOS utilities, sold as one-time purchase licenses. Every app ships with a free trial. Pay once, own your license.</p>
+
+  <div class="grid md:grid-cols-2 gap-[1px] bg-outline-variant/20 border border-outline-variant/20 mb-16">
+
+    <div class="bg-surface-container-low p-8">
+      <div class="flex justify-between items-baseline mb-2">
+        <h2 class="font-headline font-bold text-2xl uppercase tracking-wider text-primary">FRESH</h2>
+        <span class="font-headline font-bold text-2xl text-primary">$24.99</span>
+      </div>
+      <p class="text-xs text-outline uppercase tracking-[0.2em] mb-4">APP UPDATER &middot; IN DEVELOPMENT</p>
+      <p class="text-sm text-on-surface/80 leading-relaxed">Keep every Mac app up to date from one place. The successor to the app updaters you miss. One-time purchase, 14-day free trial.</p>
+    </div>
+
+    <div class="bg-surface-container-low p-8">
+      <div class="flex justify-between items-baseline mb-2">
+        <h2 class="font-headline font-bold text-2xl uppercase tracking-wider text-primary">NOTEBOUND</h2>
+        <span class="font-headline font-bold text-2xl text-primary">$9.99</span>
+      </div>
+      <p class="text-xs text-outline uppercase tracking-[0.2em] mb-4">MARKDOWN &rarr; APPLE NOTES &middot; IN DEVELOPMENT</p>
+      <p class="text-sm text-on-surface/80 leading-relaxed">Migrate your Markdown and Obsidian notes into Apple Notes &mdash; folders, images, tables and attachments intact. Free dry-run preview, pay once to migrate.</p>
+    </div>
+
+    <div class="bg-surface-container-low p-8">
+      <div class="flex justify-between items-baseline mb-2">
+        <h2 class="font-headline font-bold text-2xl uppercase tracking-wider text-primary">EVERYFILE</h2>
+        <span class="font-headline font-bold text-2xl text-primary">$19.99</span>
+      </div>
+      <p class="text-xs text-outline uppercase tracking-[0.2em] mb-4">INSTANT FILE SEARCH &middot; IN DEVELOPMENT</p>
+      <p class="text-sm text-on-surface/80 leading-relaxed">Find any file by name in milliseconds. A real-time index of your Mac that Spotlight never was. One-time purchase, 14-day free trial.</p>
+    </div>
+
+    <div class="bg-surface-container-low p-8">
+      <div class="flex justify-between items-baseline mb-2">
+        <h2 class="font-headline font-bold text-2xl uppercase tracking-wider text-primary">STACKS</h2>
+        <span class="font-headline font-bold text-2xl text-primary">$24.99</span>
+      </div>
+      <p class="text-xs text-outline uppercase tracking-[0.2em] mb-4">SCREENSHOT LIBRARY &middot; IN DEVELOPMENT</p>
+      <p class="text-sm text-on-surface/80 leading-relaxed">Your screenshots, finally searchable. On-device OCR turns every capture into searchable text. Nothing leaves your Mac. One-time purchase.</p>
+    </div>
+
+  </div>
+
+  <div class="bg-surface-container-low p-8 border border-outline-variant/20 mb-16">
+    <h2 class="font-headline font-bold text-2xl uppercase tracking-wider text-primary mb-6">EVERY PURCHASE INCLUDES</h2>
+    <ul class="space-y-3 text-sm text-on-surface/90">
+      <li>&mdash; Perpetual license for the major version you buy &mdash; it never expires and never stops working</li>
+      <li>&mdash; Free trial before you pay (14 days on all apps unless stated otherwise)</li>
+      <li>&mdash; All minor and patch updates for your major version, free</li>
+      <li>&mdash; Email support: <a href="mailto:info@perfectparadox.co.uk" class="text-primary underline underline-offset-4">info@perfectparadox.co.uk</a></li>
+      <li>&mdash; 14-day money-back guarantee &mdash; see our <a href="refund-policy.html" class="text-primary underline underline-offset-4">Refund Policy</a></li>
+    </ul>
+  </div>
+
+  <div class="bg-surface-container-lowest p-8 border border-outline-variant/20">
+    <h2 class="font-headline font-bold text-xl uppercase tracking-wider text-primary mb-4">PAYMENTS</h2>
+    <p class="text-sm text-on-surface/80 leading-relaxed mb-2">Our order process is conducted by our online reseller Paddle.com. Paddle.com is the Merchant of Record for all our orders. Paddle provides all customer service inquiries relating to billing, handles checkout, invoicing, applicable VAT/sales tax, and processes refunds.</p>
+    <p class="text-sm text-on-surface/80 leading-relaxed">See our <a href="terms.html" class="text-primary underline underline-offset-4">Terms</a>, <a href="privacy.html" class="text-primary underline underline-offset-4">Privacy Policy</a> and <a href="refund-policy.html" class="text-primary underline underline-offset-4">Refund Policy</a>.</p>
+  </div>
+
+</main>
+
+<footer class="bg-[#0e0e0e] text-[#919191] font-['JetBrains_Mono'] text-xs uppercase tracking-widest w-full px-12 py-12 border-t border-outline-variant/10">
+  <div class="flex justify-between items-center">
+    <p>&copy;2026 PERFECT PARADOX LTD. COMPANY NUMBER: NI739317. ALL RIGHTS RESERVED.</p>
+    <div class="flex gap-8">
+      <a class="hover:text-[#FFFFFF]" href="pricing.html">PRICING</a>
+      <a class="hover:text-[#FFFFFF]" href="refund-policy.html">REFUNDS</a>
+      <a class="hover:text-[#FFFFFF]" href="privacy.html">PRIVACY</a>
+      <a class="hover:text-[#FFFFFF]" href="terms.html">TERMS</a>
+      <a class="hover:text-[#FFFFFF]" href="index.html">HOME</a>
+    </div>
+  </div>
+</footer>
+
+</body></html>
