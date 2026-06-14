@@ -1,147 +1,209 @@
 <!DOCTYPE html>
-<html class="dark" lang="en"><head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>PRICING | PERFECT PARADOX LTD</title>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
-<script>
-tailwind.config = {
-  darkMode: "class",
-  theme: {
-    extend: {
-      colors: {
-        "background": "#131313",
-        "surface": "#131313",
-        "surface-container-low": "#1c1b1b",
-        "surface-container-lowest": "#0e0e0e",
-        "on-surface": "#e5e2e1",
-        "primary": "#ffffff",
-        "outline": "#919191",
-        "outline-variant": "#474747",
-      },
-      fontFamily: {
-        "headline": ["Space Grotesk"],
-        "body": ["JetBrains Mono"],
-      },
-      borderRadius: {"DEFAULT": "0px", "lg": "0px", "xl": "0px", "full": "0px"},
-    },
-  },
-}
-</script>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Software &amp; Pricing — Perfect Paradox</title>
+<meta name="description" content="Perfect Paradox Mac software — one-time purchase, on-device, zero telemetry. Five focused macOS tools, each with a free trial. Pay once, own your license.">
+<meta property="og:title" content="Software &amp; Pricing — Perfect Paradox">
+<meta property="og:description" content="One-time purchase. On-device. Zero telemetry. Five focused Mac tools, each with a free trial.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@400;500;600;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
 <style>
-body {
-  background-color: #131313;
-  color: #e5e2e1;
-  font-family: 'JetBrains Mono', monospace;
+:root{
+  --bg:#070708; --ink:#f4f1ea; --dim:#9a978f; --faint:#56544e;
+  --line:rgba(244,241,234,.12); --silver:#dcd8d0;
 }
-.digital-grain {
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
-  opacity: 0.02;
-  pointer-events: none;
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font-family:'Archivo',sans-serif;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+.mono{font-family:'JetBrains Mono',monospace}
+
+/* background */
+.bgwrap{position:fixed;inset:0;z-index:0;overflow:hidden;background:
+  radial-gradient(130% 100% at 80% 12%, rgba(220,216,208,.10), transparent 50%),
+  radial-gradient(100% 80% at 8% 98%, rgba(220,216,208,.04), transparent 48%),
+  #060607}
+.dots{position:absolute;inset:0;opacity:.55;
+  background-image:radial-gradient(circle, rgba(220,216,208,.10) 1px, transparent 1.4px);
+  background-size:34px 34px;
+  mask-image:radial-gradient(120% 100% at 75% 18%, #000 0%, rgba(0,0,0,.3) 45%, transparent 75%)}
+.noise{position:absolute;inset:0;opacity:.045;pointer-events:none;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+.vign{position:absolute;inset:0;pointer-events:none;box-shadow:inset 0 0 280px 80px rgba(0,0,0,.92)}
+
+/* rails */
+.rail{position:fixed;top:0;bottom:0;width:42px;display:flex;align-items:center;justify-content:center;z-index:40;pointer-events:none}
+.rail.l{left:0}.rail.r{right:0}
+.rail span{writing-mode:vertical-rl;font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:.4em;text-transform:uppercase;color:var(--faint)}
+.rail.l span{transform:rotate(180deg)}
+
+/* nav */
+nav{position:fixed;top:0;left:0;right:0;height:64px;display:flex;align-items:center;justify-content:space-between;padding:0 60px;z-index:50;
+  backdrop-filter:blur(10px);background:linear-gradient(180deg,rgba(6,6,7,.8),transparent)}
+nav .brand{display:flex;align-items:center;gap:13px;font-family:'JetBrains Mono',monospace;font-size:12.5px;letter-spacing:.34em;text-transform:uppercase;color:var(--ink)}
+nav .mono-mark{width:20px;height:20px;border:1px solid var(--silver);border-radius:50%;position:relative;flex:0 0 auto;overflow:hidden}
+nav .mono-mark::before{content:"";position:absolute;left:0;top:0;bottom:0;width:50%;background:var(--silver)}
+nav .links{display:flex;gap:28px;font-family:'JetBrains Mono',monospace;font-size:11.5px;letter-spacing:.22em;text-transform:uppercase}
+nav .links a{color:var(--dim);transition:.2s}nav .links a:hover{color:var(--ink)}
+
+.page{position:relative;z-index:2}
+.wrap{max-width:1100px;margin:0 auto;padding:0 60px}
+.label{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.36em;text-transform:uppercase;color:var(--dim)}
+
+/* hero */
+.hero{padding:150px 0 40px}
+.eyebrow{font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.5em;text-transform:uppercase;color:var(--dim);margin-bottom:24px;display:flex;align-items:center;gap:16px}
+.eyebrow::before{content:"";width:46px;height:1px;background:var(--silver)}
+.hero h1{font-family:'Anton',sans-serif;text-transform:uppercase;line-height:.9;letter-spacing:-.005em;font-size:clamp(48px,8vw,104px)}
+.hero h1 em{font-style:normal;-webkit-text-stroke:1.4px var(--silver);color:transparent}
+.hero .sub{margin-top:24px;max-width:560px;font-size:17px;line-height:1.6;color:#cfccc4}
+
+/* product cards */
+.cards{padding:46px 0 30px;display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--line);border:1px solid var(--line)}
+.card{background:var(--bg);padding:30px 28px;display:grid;grid-template-columns:60px 1fr;gap:20px;align-items:start;transition:background .28s,transform .28s;position:relative}
+.card:hover{background:#0d0d0f}
+.card img{width:58px;height:58px;border-radius:13px;box-shadow:0 8px 26px rgba(0,0,0,.5);transition:transform .28s}
+.card:hover img{transform:scale(1.05)}
+.card .top{display:flex;justify-content:space-between;align-items:baseline;gap:12px}
+.card .nm{font-family:'Anton',sans-serif;text-transform:uppercase;font-size:26px;line-height:1;letter-spacing:.01em}
+.card .price{font-family:'JetBrains Mono',monospace;font-size:15px;color:var(--silver);white-space:nowrap}
+.card .cat{font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--faint);margin:9px 0 11px}
+.card .ds{font-size:14px;line-height:1.55;color:var(--dim)}
+.card .view{margin-top:16px;display:inline-flex;align-items:center;gap:7px;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--dim);transition:.2s}
+.card .view .arr{transition:transform .25s}
+.card:hover .view{color:var(--ink)}
+.card:hover .view .arr{transform:translateX(4px)}
+
+/* bands */
+.band{border-top:1px solid var(--line);background:rgba(6,6,7,.7);backdrop-filter:blur(6px)}
+.band .wrap{padding-top:64px;padding-bottom:64px}
+.band h2{font-family:'Anton',sans-serif;text-transform:uppercase;font-size:clamp(26px,3.4vw,40px);line-height:1;margin:16px 0 26px}
+.incl{display:grid;gap:14px;max-width:720px}
+.incl .row{display:grid;grid-template-columns:22px 1fr;gap:12px;align-items:start;font-size:15px;line-height:1.5;color:#cfccc4}
+.incl .row .tick{color:var(--silver);font-family:'JetBrains Mono',monospace}
+.incl a{color:var(--silver);text-decoration:underline;text-underline-offset:3px}
+.pay p{font-size:14.5px;line-height:1.7;color:var(--dim);max-width:760px;margin-bottom:12px}
+.pay a{color:var(--silver);text-decoration:underline;text-underline-offset:3px}
+
+footer{border-top:1px solid var(--line);background:rgba(6,6,7,.94);padding:48px 60px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:20px;align-items:center}
+footer .c{font-family:'JetBrains Mono',monospace;font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--faint)}
+footer .lk{display:flex;gap:22px;font-family:'JetBrains Mono',monospace;font-size:11.5px;letter-spacing:.14em;text-transform:uppercase}
+footer .lk a{color:var(--dim)}footer .lk a:hover{color:var(--ink)}
+
+@media(max-width:860px){
+  nav,.wrap,footer{padding-left:22px;padding-right:22px}
+  .cards{grid-template-columns:1fr}
+  .rail{display:none}
+  nav .links a:not(:last-child){display:none}
 }
 </style>
 </head>
 <body>
-<div class="fixed inset-0 digital-grain z-50"></div>
 
-<!-- Nav -->
+<div class="bgwrap"><div class="dots"></div><div class="noise"></div><div class="vign"></div></div>
+<div class="rail l"><span>Perfect Paradox Ltd · NI739317</span></div>
+<div class="rail r"><span>Belfast · Northern Ireland</span></div>
 
-<nav class="bg-[#131313] text-[#FFFFFF] font-['Space_Grotesk'] uppercase tracking-[0.2em] text-sm fixed w-full z-40 flex justify-between items-center px-12 py-6">
-  <a href="index.html" class="text-2xl font-bold tracking-tighter text-[#FFFFFF]">MONOLITH.PROTOCOL</a>
-  <a href="index.html" class="text-[#919191] hover:text-[#FFFFFF] transition-colors flex items-center gap-2">
-    <span class="material-symbols-outlined text-sm">arrow_back</span> BACK TO SYSTEM
-  </a>
+<nav>
+  <a class="brand" href="index.html"><span class="mono-mark"></span>PERFECT&nbsp;PARADOX</a>
+  <div class="links"><a href="index.html">Home</a><a href="index.html#software">Software</a><a href="mailto:info@perfectparadox.co.uk">Contact</a></div>
 </nav>
 
-<main class="pt-32 pb-24 px-8 md:px-16 lg:px-24 max-w-5xl mx-auto relative z-10">
+<div class="page">
 
-  <div class="mb-4 font-body text-xs text-outline uppercase tracking-[0.3em]">SYSTEM_DIRECTORIES / PRICING.SYS</div>
-  <h1 class="font-headline font-bold text-5xl md:text-7xl uppercase tracking-tighter mb-4 text-primary">SOFTWARE<br/>&amp; PRICING</h1>
-  <div class="h-[1px] bg-outline-variant/30 my-8"></div>
-  <p class="font-body text-sm text-outline mb-4">One-time pricing. No subscriptions. No telemetry.</p>
-  <p class="font-body text-sm text-on-surface/80 mb-12 max-w-2xl">Perfect Paradox builds native macOS utilities, sold as one-time purchase licenses. Every app ships with a free trial. Pay once, own your license.</p>
+<section class="hero wrap">
+  <div class="eyebrow">// Pricing</div>
+  <h1>Software<br><em>&amp; Pricing</em></h1>
+  <p class="sub">Native macOS tools sold as a one-time purchase. No subscriptions, no telemetry, nothing leaves your Mac. Every app ships with a free trial — pay once, own your license.</p>
+</section>
 
-  <div class="grid md:grid-cols-2 gap-[1px] bg-outline-variant/20 border border-outline-variant/20 mb-16">
+<section class="wrap">
+  <div class="cards">
 
-    <div class="bg-surface-container-low p-8">
-      <div class="flex justify-between items-baseline mb-2">
-        <h2 class="font-headline font-bold text-2xl uppercase tracking-wider text-primary">EVERGREEN</h2>
-        <span class="font-headline font-bold text-2xl text-primary">$19.99</span>
+    <a class="card" href="https://curtain.perfectparadox.co.uk" target="_blank" rel="noopener">
+      <img src="icons/curtain.png" alt="Curtain">
+      <div>
+        <div class="top"><span class="nm">Curtain</span><span class="price">$9.99</span></div>
+        <div class="cat">Screen-share privacy</div>
+        <p class="ds">Auto Do-Not-Disturb the moment you share your screen. Never flash a private message to the whole call again.</p>
+        <span class="view">View &amp; Buy <span class="arr">→</span></span>
       </div>
-      <p class="text-xs text-outline uppercase tracking-[0.2em] mb-4">APP UPDATER</p>
-      <p class="text-sm text-on-surface/80 leading-relaxed">Keep every Mac app up to date from one place. The successor to the app updaters you miss. One-time purchase, 14-day free trial.</p>
-    </div>
+    </a>
 
-    <div class="bg-surface-container-low p-8">
-      <div class="flex justify-between items-baseline mb-2">
-        <h2 class="font-headline font-bold text-2xl uppercase tracking-wider text-primary">NOTEBOUND</h2>
-        <span class="font-headline font-bold text-2xl text-primary">$9.99</span>
+    <a class="card" href="https://notebound.perfectparadox.co.uk" target="_blank" rel="noopener">
+      <img src="icons/notebound.png" alt="Notebound">
+      <div>
+        <div class="top"><span class="nm">Notebound</span><span class="price">$9.99</span></div>
+        <div class="cat">Apple Notes ↔ Markdown</div>
+        <p class="ds">Apple Notes and Markdown, both ways. Get years of notes out of Apple Notes as clean, AI-ready files — folders, images and tables intact.</p>
+        <span class="view">View &amp; Buy <span class="arr">→</span></span>
       </div>
-      <p class="text-xs text-outline uppercase tracking-[0.2em] mb-4">MARKDOWN &rarr; APPLE NOTES</p>
-      <p class="text-sm text-on-surface/80 leading-relaxed">Migrate your Markdown and Obsidian notes into Apple Notes &mdash; folders, images, tables and attachments intact. Free dry-run preview, pay once to migrate.</p>
-    </div>
+    </a>
 
-    <div class="bg-surface-container-low p-8">
-      <div class="flex justify-between items-baseline mb-2">
-        <h2 class="font-headline font-bold text-2xl uppercase tracking-wider text-primary">EVERYFILE</h2>
-        <span class="font-headline font-bold text-2xl text-primary">$19.99</span>
+    <a class="card" href="https://everyfile.perfectparadox.co.uk" target="_blank" rel="noopener">
+      <img src="icons/everyfile.png" alt="Everyfile">
+      <div>
+        <div class="top"><span class="nm">Everyfile</span><span class="price">$19.99</span></div>
+        <div class="cat">Instant file search</div>
+        <p class="ds">Find any file on your Mac in milliseconds. A live local index a keystroke away — with QuickLook, power filters and drag-out.</p>
+        <span class="view">View &amp; Buy <span class="arr">→</span></span>
       </div>
-      <p class="text-xs text-outline uppercase tracking-[0.2em] mb-4">INSTANT FILE SEARCH</p>
-      <p class="text-sm text-on-surface/80 leading-relaxed">Find any file by name in milliseconds. A real-time index of your Mac that Spotlight never was. One-time purchase, 14-day free trial.</p>
-    </div>
+    </a>
 
-    <div class="bg-surface-container-low p-8">
-      <div class="flex justify-between items-baseline mb-2">
-        <h2 class="font-headline font-bold text-2xl uppercase tracking-wider text-primary">SCREENSHELF</h2>
-        <span class="font-headline font-bold text-2xl text-primary">$24.99</span>
+    <a class="card" href="https://evergreen.perfectparadox.co.uk" target="_blank" rel="noopener">
+      <img src="icons/evergreen.png" alt="Evergreen">
+      <div>
+        <div class="top"><span class="nm">Evergreen</span><span class="price">$19.99</span></div>
+        <div class="cat">App updater</div>
+        <p class="ds">Keep every app up to date from one place — signature-verified, atomic and safe. Updates without the chaos.</p>
+        <span class="view">View &amp; Buy <span class="arr">→</span></span>
       </div>
-      <p class="text-xs text-outline uppercase tracking-[0.2em] mb-4">SCREENSHOT LIBRARY</p>
-      <p class="text-sm text-on-surface/80 leading-relaxed">Your screenshots, finally searchable. On-device OCR turns every capture into searchable text. Nothing leaves your Mac. One-time purchase.</p>
-    </div>
+    </a>
 
-    <div class="bg-surface-container-low p-8">
-      <div class="flex justify-between items-baseline mb-2">
-        <h2 class="font-headline font-bold text-2xl uppercase tracking-wider text-primary">CURTAIN</h2>
-        <span class="font-headline font-bold text-2xl text-primary">$9.99</span>
+    <a class="card" href="https://screenshelf.perfectparadox.co.uk" target="_blank" rel="noopener">
+      <img src="icons/screenshelf.png" alt="Screenshelf">
+      <div>
+        <div class="top"><span class="nm">Screenshelf</span><span class="price">$24.99</span></div>
+        <div class="cat">Screenshot OCR library</div>
+        <p class="ds">Search the text inside your screenshots. On-device OCR turns your pile of captures into a searchable shelf — export any one to Markdown or Obsidian.</p>
+        <span class="view">View &amp; Buy <span class="arr">→</span></span>
       </div>
-      <p class="text-xs text-outline uppercase tracking-[0.2em] mb-4">SCREEN-SHARE PRIVACY</p>
-      <p class="text-sm text-on-surface/80 leading-relaxed">Auto Do-Not-Disturb the moment you share your screen. Never flash a private message to the whole call again. One-time purchase, 14-day free trial.</p>
-    </div>
+    </a>
 
   </div>
+</section>
 
-  <div class="bg-surface-container-low p-8 border border-outline-variant/20 mb-16">
-    <h2 class="font-headline font-bold text-2xl uppercase tracking-wider text-primary mb-6">EVERY PURCHASE INCLUDES</h2>
-    <ul class="space-y-3 text-sm text-on-surface/90">
-      <li>&mdash; Perpetual license for the major version you buy &mdash; it never expires and never stops working</li>
-      <li>&mdash; Free trial before you pay (14 days on all apps unless stated otherwise)</li>
-      <li>&mdash; All minor and patch updates for your major version, free</li>
-      <li>&mdash; Email support: <a href="mailto:info@perfectparadox.co.uk" class="text-primary underline underline-offset-4">info@perfectparadox.co.uk</a></li>
-      <li>&mdash; 14-day money-back guarantee &mdash; see our <a href="refund-policy.html" class="text-primary underline underline-offset-4">Refund Policy</a></li>
-    </ul>
-  </div>
-
-  <div class="bg-surface-container-lowest p-8 border border-outline-variant/20">
-    <h2 class="font-headline font-bold text-xl uppercase tracking-wider text-primary mb-4">PAYMENTS</h2>
-    <p class="text-sm text-on-surface/80 leading-relaxed mb-2">Our order process is conducted by our online reseller Paddle.com. Paddle.com is the Merchant of Record for all our orders. Paddle provides all customer service inquiries relating to billing, handles checkout, invoicing, applicable VAT/sales tax, and processes refunds.</p>
-    <p class="text-sm text-on-surface/80 leading-relaxed">See our <a href="terms.html" class="text-primary underline underline-offset-4">Terms</a>, <a href="privacy.html" class="text-primary underline underline-offset-4">Privacy Policy</a> and <a href="refund-policy.html" class="text-primary underline underline-offset-4">Refund Policy</a>.</p>
-  </div>
-
-</main>
-
-<footer class="bg-[#0e0e0e] text-[#919191] font-['JetBrains_Mono'] text-xs uppercase tracking-widest w-full px-12 py-12 border-t border-outline-variant/10">
-  <div class="flex justify-between items-center">
-    <p>&copy;2026 PERFECT PARADOX LTD. COMPANY NUMBER: NI739317. ALL RIGHTS RESERVED.</p>
-    <div class="flex gap-8">
-      <a class="hover:text-[#FFFFFF]" href="pricing.html">PRICING</a>
-      <a class="hover:text-[#FFFFFF]" href="refund-policy.html">REFUNDS</a>
-      <a class="hover:text-[#FFFFFF]" href="privacy.html">PRIVACY</a>
-      <a class="hover:text-[#FFFFFF]" href="terms.html">TERMS</a>
-      <a class="hover:text-[#FFFFFF]" href="index.html">HOME</a>
+<section class="band">
+  <div class="wrap">
+    <div class="label">// What you get</div>
+    <h2>Every purchase includes</h2>
+    <div class="incl">
+      <div class="row"><span class="tick">—</span><span>A perpetual license for the major version you buy — it never expires and never stops working.</span></div>
+      <div class="row"><span class="tick">—</span><span>A free trial before you pay (14 days on all apps unless stated otherwise).</span></div>
+      <div class="row"><span class="tick">—</span><span>All minor and patch updates for your major version, free.</span></div>
+      <div class="row"><span class="tick">—</span><span>Email support: <a href="mailto:info@perfectparadox.co.uk">info@perfectparadox.co.uk</a></span></div>
+      <div class="row"><span class="tick">—</span><span>A 14-day money-back guarantee — see our <a href="refund-policy.html">Refund Policy</a>.</span></div>
     </div>
   </div>
+</section>
+
+<section class="band">
+  <div class="wrap pay">
+    <div class="label">// Payments</div>
+    <h2>Secure checkout</h2>
+    <p>Our order process is conducted by our online reseller Paddle.com, the Merchant of Record for all our orders. Paddle handles checkout, billing enquiries, invoicing, applicable VAT/sales tax, and processes refunds.</p>
+    <p>See our <a href="terms.html">Terms</a>, <a href="privacy.html">Privacy Policy</a> and <a href="refund-policy.html">Refund Policy</a>.</p>
+  </div>
+</section>
+
+<footer>
+  <div class="c">© 2026 Perfect Paradox Ltd · NI739317 · Belfast, Northern Ireland</div>
+  <div class="lk"><a href="index.html">Home</a><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a><a href="refund-policy.html">Refunds</a><a href="mailto:info@perfectparadox.co.uk">Contact</a></div>
 </footer>
 
-</body></html>
+</div>
+</body>
+</html>
