@@ -1,512 +1,325 @@
 <!DOCTYPE html>
-<html class="dark" lang="en"><head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>PERFECT PARADOX LTD | MONOLITH.PROTOCOL</title>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=JetBrains+Mono:wght@300;400;500&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<script id="tailwind-config">
-      tailwind.config = {
-        darkMode: "class",
-        theme: {
-          extend: {
-            colors: {
-              "primary-fixed-dim": "#454747",
-              "on-primary": "#1a1c1c",
-              "surface-container-highest": "#353534",
-              "secondary": "#c7c6c6",
-              "on-secondary-fixed": "#1b1c1c",
-              "surface-variant": "#353534",
-              "on-tertiary-fixed": "#ffffff",
-              "tertiary": "#e2e2e2",
-              "background": "#131313",
-              "primary-container": "#d4d4d4",
-              "secondary-container": "#464747",
-              "surface-container-lowest": "#0e0e0e",
-              "surface": "#131313",
-              "on-secondary-container": "#e3e2e2",
-              "on-error": "#690005",
-              "on-tertiary-container": "#000000",
-              "inverse-primary": "#5d5f5f",
-              "secondary-fixed": "#c7c6c6",
-              "primary": "#ffffff",
-              "on-error-container": "#ffdad6",
-              "primary-fixed": "#5d5f5f",
-              "surface-dim": "#131313",
-              "surface-container": "#201f1f",
-              "on-tertiary-fixed-variant": "#e2e2e2",
-              "tertiary-fixed-dim": "#474747",
-              "surface-container-high": "#2a2a2a",
-              "on-background": "#e5e2e1",
-              "inverse-surface": "#e5e2e1",
-              "error-container": "#93000a",
-              "surface-tint": "#c6c6c7",
-              "tertiary-fixed": "#5e5e5e",
-              "on-secondary-fixed-variant": "#3b3b3c",
-              "outline-variant": "#474747",
-              "on-surface": "#e5e2e1",
-              "on-primary-fixed-variant": "#e2e2e2",
-              "outline": "#919191",
-              "error": "#ffb4ab",
-              "on-tertiary": "#1b1b1b",
-              "surface-bright": "#393939",
-              "on-primary-container": "#000000",
-              "on-primary-fixed": "#ffffff",
-              "inverse-on-surface": "#313030",
-              "on-surface-variant": "#c6c6c6",
-              "secondary-fixed-dim": "#ababab",
-              "on-secondary": "#1b1c1c",
-              "tertiary-container": "#919191",
-              "surface-container-low": "#1c1b1b"
-            },
-            fontFamily: {
-              "headline": ["Space Grotesk"],
-              "body": ["JetBrains Mono"],
-              "label": ["Space Grotesk"]
-            },
-            borderRadius: {"DEFAULT": "0px", "lg": "0px", "xl": "0px", "full": "0px"},
-          },
-        },
-      }
-    </script>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Perfect Paradox — Mac software that respects you</title>
+<meta name="description" content="Perfect Paradox Ltd builds macOS software that runs entirely on your Mac. One-time purchase, zero telemetry, no cloud. Belfast, Northern Ireland.">
+<meta property="og:title" content="Perfect Paradox — Mac software that respects you">
+<meta property="og:description" content="On-device. One-time. Zero telemetry. A small studio building Mac tools you actually own.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@400;500;600;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
 <style>
-      .material-symbols-outlined {
-        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
-      }
-      html {
-        scroll-behavior: smooth;
-      }
-      body {
-        background-color: #131313;
-        color: #FFFFFF;
-        font-family: 'JetBrains Mono', monospace;
-      }
-      .digital-grain {
-        background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
-        opacity: 0.02;
-        pointer-events: none;
-      }
-      .protocol-line {
-        background-color: #474747;
-        height: 1px;
-        width: 100%;
-      }
-    </style>
+:root{
+  --bg:#070708; --ink:#f4f1ea; --dim:#9a978f; --faint:#56544e;
+  --line:rgba(244,241,234,.12); --line2:rgba(244,241,234,.05);
+  --silver:#dcd8d0;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font-family:'Archivo',sans-serif;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+.mono{font-family:'JetBrains Mono',monospace}
+
+/* ---------- background ---------- */
+.bgwrap{position:fixed;inset:0;z-index:0;overflow:hidden;background:
+  radial-gradient(130% 100% at 80% 18%, rgba(220,216,208,.10), transparent 50%),
+  radial-gradient(100% 80% at 8% 96%, rgba(220,216,208,.045), transparent 48%),
+  #060607}
+.bgvideo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.55}
+.dots{position:absolute;inset:0;opacity:.6;
+  background-image:radial-gradient(circle, rgba(220,216,208,.10) 1px, transparent 1.4px);
+  background-size:34px 34px;
+  mask-image:radial-gradient(120% 100% at 75% 25%, #000 0%, rgba(0,0,0,.35) 45%, transparent 75%)}
+.stars{position:absolute;inset:0;opacity:.8}
+.stars i{position:absolute;width:2px;height:2px;border-radius:50%;background:rgba(220,216,208,.7);animation:tw 4s ease-in-out infinite}
+.noise{position:absolute;inset:0;opacity:.045;pointer-events:none;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+.vign{position:absolute;inset:0;pointer-events:none;box-shadow:inset 0 0 280px 80px rgba(0,0,0,.92)}
+@keyframes tw{0%,100%{opacity:.15}50%{opacity:.9}}
+
+/* ---------- orbital brand object ---------- */
+.orbit{position:absolute;top:50%;right:7%;width:560px;height:560px;transform:translateY(-46%);z-index:1;
+  transform-style:preserve-3d;animation:tilt 26s ease-in-out infinite alternate;pointer-events:none}
+.orbit .sys{position:absolute;inset:0;transform-style:preserve-3d;animation:spin 42s linear infinite}
+.orbit .ring{position:absolute;inset:0;border:1.5px solid rgba(220,216,208,.36);border-radius:50%}
+.orbit .ring.a{transform:rotateX(72deg)}
+.orbit .ring.b{transform:rotateX(72deg) rotateY(60deg)}
+.orbit .ring.c{transform:rotateX(72deg) rotateY(120deg)}
+.orbit .ring.d{inset:15%;border-color:rgba(220,216,208,.22);transform:rotateX(60deg) rotateY(30deg)}
+.orbit .core{position:absolute;left:50%;top:50%;width:13px;height:13px;margin:-6.5px;border-radius:50%;
+  background:radial-gradient(circle,#fff,rgba(220,216,208,.5) 60%,transparent);box-shadow:0 0 54px 16px rgba(220,216,208,.20)}
+.orbit .halo{position:absolute;inset:-8%;border-radius:50%;background:radial-gradient(circle,rgba(220,216,208,.07),transparent 62%)}
+@keyframes spin{from{transform:rotateY(0)}to{transform:rotateY(360deg)}}
+@keyframes tilt{from{transform:translateY(-46%) rotateZ(-5deg)}to{transform:translateY(-46%) rotateZ(5deg)}}
+
+/* rails */
+.rail{position:fixed;top:0;bottom:0;width:42px;display:flex;align-items:center;justify-content:center;z-index:40;pointer-events:none}
+.rail.l{left:0}.rail.r{right:0}
+.rail span{writing-mode:vertical-rl;font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:.4em;text-transform:uppercase;color:var(--faint)}
+.rail.l span{transform:rotate(180deg)}
+
+/* nav */
+nav{position:fixed;top:0;left:0;right:0;height:64px;display:flex;align-items:center;justify-content:space-between;padding:0 60px;z-index:50;
+  backdrop-filter:blur(10px);background:linear-gradient(180deg,rgba(6,6,7,.8),transparent)}
+nav .brand{display:flex;align-items:center;gap:13px;font-family:'JetBrains Mono',monospace;font-size:12.5px;letter-spacing:.34em;text-transform:uppercase;color:var(--ink)}
+nav .mono-mark{width:20px;height:20px;border:1px solid var(--silver);border-radius:50%;position:relative;flex:0 0 auto;overflow:hidden}
+nav .mono-mark::before{content:"";position:absolute;left:0;top:0;bottom:0;width:50%;background:var(--silver)}
+nav .links{display:flex;gap:28px;font-family:'JetBrains Mono',monospace;font-size:11.5px;letter-spacing:.22em;text-transform:uppercase}
+nav a{color:var(--dim);text-decoration:none;transition:.2s}nav a:hover{color:var(--ink)}
+
+.page{position:relative;z-index:2}
+
+/* ---------- hero ---------- */
+.hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;padding:0 60px;position:relative}
+.hero .inner{max-width:1000px;position:relative;z-index:3}
+.eyebrow{font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.5em;text-transform:uppercase;color:var(--dim);margin-bottom:30px;display:flex;align-items:center;gap:16px}
+.eyebrow::before{content:"";width:46px;height:1px;background:var(--silver)}
+.wordmark{font-family:'Anton',sans-serif;text-transform:uppercase;line-height:.82;letter-spacing:-.005em}
+.wordmark .l1{font-size:clamp(66px,13.5vw,210px);color:var(--ink);text-shadow:0 8px 60px rgba(0,0,0,.6)}
+.wordmark .l2{font-size:clamp(66px,13.5vw,210px);-webkit-text-stroke:1.4px var(--silver);color:transparent}
+.hero .sub{margin-top:34px;max-width:520px;font-size:19px;line-height:1.62;color:#cfccc4}
+.hero .meta{margin-top:42px;display:flex;gap:14px;flex-wrap:wrap}
+.hero .chip{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--dim);border:1px solid var(--line);padding:9px 15px;border-radius:2px}
+.hero .chip b{color:var(--silver);font-weight:500}
+.scrollcue{position:absolute;bottom:30px;left:60px;font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:.3em;text-transform:uppercase;color:var(--faint);display:flex;align-items:center;gap:10px;z-index:3}
+.scrollcue::after{content:"";width:1px;height:34px;background:linear-gradient(var(--silver),transparent);animation:pulse 2.4s ease-in-out infinite}
+@keyframes pulse{0%,100%{opacity:.3}50%{opacity:1}}
+
+/* ---------- sections ---------- */
+.band{border-top:1px solid var(--line);background:rgba(6,6,7,.76);backdrop-filter:blur(6px)}
+.wrap{max-width:1240px;margin:0 auto;padding:0 60px}
+.label{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.36em;text-transform:uppercase;color:var(--dim)}
+.h2{font-family:'Anton',sans-serif;text-transform:uppercase;line-height:.95}
+
+.manifesto{padding:122px 0}
+.manifesto h2{font-family:'Anton',sans-serif;text-transform:uppercase;font-size:clamp(34px,5.2vw,68px);line-height:.98;margin:26px 0 0;max-width:17ch}
+.manifesto h2 em{font-style:normal;-webkit-text-stroke:1.2px var(--silver);color:transparent}
+.principles{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);margin-top:70px}
+.principle{background:var(--bg);padding:38px 30px;min-height:212px;display:flex;flex-direction:column;justify-content:space-between;transition:background .3s}
+.principle:hover{background:#0d0d0f}
+.principle .n{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--faint);letter-spacing:.2em}
+.principle h3{font-family:'Anton',sans-serif;text-transform:uppercase;font-size:23px;line-height:1.02;margin:16px 0 10px}
+.principle p{font-size:13.5px;line-height:1.55;color:var(--dim)}
+
+.products{padding:118px 0}
+.products .head{display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:20px}
+.products h2{font-size:clamp(34px,5vw,62px);margin-top:24px}
+.products .count{font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.2em;color:var(--faint)}
+.plist{margin-top:60px;border-top:1px solid var(--line)}
+.prod{display:grid;grid-template-columns:84px 1fr auto;gap:30px;align-items:center;padding:30px 8px;border-bottom:1px solid var(--line);
+  text-decoration:none;color:inherit;transition:padding .28s,background .28s;position:relative}
+.prod::after{content:"";position:absolute;left:0;bottom:-1px;height:1px;width:0;background:var(--silver);transition:width .4s ease}
+.prod:hover{padding-left:24px;background:linear-gradient(90deg,rgba(220,216,208,.04),transparent)}
+.prod:hover::after{width:100%}
+.prod img{width:64px;height:64px;border-radius:14px;box-shadow:0 8px 30px rgba(0,0,0,.55);transition:transform .28s}
+.prod:hover img{transform:scale(1.06)}
+.prod .info .nm{font-family:'Anton',sans-serif;text-transform:uppercase;font-size:27px;line-height:1;letter-spacing:.01em}
+.prod .info .ds{margin-top:8px;font-size:14.5px;color:var(--dim);max-width:54ch;line-height:1.5}
+.prod .right{display:flex;align-items:center;gap:26px}
+.prod .price{font-family:'JetBrains Mono',monospace;font-size:13px;color:var(--silver);letter-spacing:.05em}
+.prod .arrow{font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--dim);white-space:nowrap}
+.prod:hover .arrow{color:var(--ink)}
+
+/* project logs */
+.logs{padding:118px 0}
+.logs h2{font-size:clamp(32px,4.6vw,58px);margin-top:24px;letter-spacing:.02em}
+.loglist{margin-top:58px;display:grid;gap:1px;background:var(--line);border:1px solid var(--line)}
+.log{background:var(--bg);padding:30px 34px;display:grid;grid-template-columns:auto 1fr;gap:30px;align-items:center}
+.log .badge{font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:.18em;color:var(--faint);text-transform:uppercase;display:flex;align-items:center;gap:9px;white-space:nowrap}
+.log .badge .dot{width:7px;height:7px;border-radius:50%;background:#caa84a;box-shadow:0 0 10px #caa84a99;animation:pulse 2.6s ease-in-out infinite}
+.log .lock{font-size:12px;color:var(--faint)}
+.log .nm{font-family:'Anton',sans-serif;text-transform:uppercase;font-size:26px;line-height:1;display:flex;align-items:baseline;gap:14px;flex-wrap:wrap}
+.log .tag{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.18em;color:var(--silver);text-transform:uppercase;border:1px solid var(--line);padding:3px 9px;border-radius:2px}
+.log .redacted{margin-top:12px;display:flex;flex-wrap:wrap;gap:7px 9px;align-items:center}
+.log .redacted .bar{height:11px;background:rgba(244,241,234,.16);border-radius:2px}
+.log .redacted .note{font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:.16em;color:var(--faint);text-transform:uppercase;margin-left:4px}
+
+.company{padding:122px 0}
+.company .grid{display:grid;grid-template-columns:1.1fr 1fr;gap:80px;align-items:start}
+.company h2{font-size:clamp(30px,4.4vw,54px);margin:22px 0 26px;letter-spacing:.02em}
+.company p{font-size:16px;line-height:1.7;color:#c9c6be;max-width:48ch;margin-bottom:18px}
+.company p em{font-style:normal;color:var(--silver)}
+.facts{border:1px solid var(--line)}
+.fact{display:flex;justify-content:space-between;padding:20px 26px;border-bottom:1px solid var(--line);font-family:'JetBrains Mono',monospace;font-size:12.5px;letter-spacing:.04em}
+.fact:last-child{border-bottom:none}
+.fact .k{color:var(--faint);text-transform:uppercase;letter-spacing:.16em;font-size:11px}
+.fact .v{color:var(--silver)}
+
+footer{border-top:1px solid var(--line);background:rgba(6,6,7,.94);padding:54px 60px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:24px;align-items:center}
+footer .c{font-family:'JetBrains Mono',monospace;font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--faint)}
+footer .lk{display:flex;gap:24px;font-family:'JetBrains Mono',monospace;font-size:11.5px;letter-spacing:.14em;text-transform:uppercase}
+footer a{color:var(--dim);text-decoration:none}footer a:hover{color:var(--ink)}
+
+.rv{opacity:0;transform:translateY(22px);transition:opacity .9s ease,transform .9s ease}
+.rv.in{opacity:1;transform:none}
+
+@media(max-width:1100px){.orbit{right:-6%;width:440px;height:440px;opacity:.7}}
+@media(max-width:900px){
+  .principles{grid-template-columns:repeat(2,1fr)}
+  .company .grid{grid-template-columns:1fr;gap:44px}
+  .log{grid-template-columns:1fr;gap:14px}
+  nav,.hero,.wrap,footer{padding-left:24px;padding-right:24px}
+  .scrollcue{left:24px}.rail{display:none}.orbit{display:none}
+  .prod{grid-template-columns:60px 1fr;gap:18px}.prod .right{grid-column:1/-1;justify-content:space-between;margin-top:4px}
+}
+</style>
 </head>
-<body class="bg-background text-on-surface selection:bg-primary selection:text-on-primary">
-<div class="fixed inset-0 digital-grain z-50"></div>
-<!-- TopNavBar -->
-<nav class="bg-[#131313] text-[#FFFFFF] font-['Space_Grotesk'] uppercase tracking-[0.2em] text-sm md:text-base docked full-width top-0 border-none flex justify-between items-center w-full px-12 py-6 max-w-full fixed z-40">
-<div class="text-2xl font-bold tracking-tighter text-[#FFFFFF]">MONOLITH.PROTOCOL</div>
-<div class="hidden md:flex gap-12 items-center">
-<a class="text-[#FFFFFF] border-b-2 border-[#FFFFFF] pb-1 hover:bg-[#393939] transition-colors duration-100" href="#home">HOME</a>
-<a class="text-[#919191] hover:bg-[#393939] transition-colors duration-100" href="#projects">PROJECTS</a>
-<a class="text-[#919191] hover:bg-[#393939] transition-colors duration-100" href="#media">MEDIA</a>
-<a class="text-[#919191] hover:bg-[#393939] transition-colors duration-100" href="#contact">CONTACT</a>
+<body>
+
+<div class="bgwrap">
+  <video class="bgvideo" autoplay muted loop playsinline><source src="hero.mp4" type="video/mp4"></video>
+  <div class="dots"></div>
+  <div class="stars" id="stars"></div>
+  <div class="noise"></div>
+  <div class="vign"></div>
 </div>
-<a href="#projects" class="bg-primary text-on-primary px-6 py-2 font-bold hover:bg-secondary-fixed transition-colors active:scale-[0.99]">EXPLORE</a>
+
+<div class="rail l"><span>Perfect Paradox Ltd · NI739317</span></div>
+<div class="rail r"><span>Belfast · Northern Ireland</span></div>
+
+<nav>
+  <div class="brand"><span class="mono-mark"></span>PERFECT&nbsp;PARADOX</div>
+  <div class="links"><a href="#principles">Principles</a><a href="#software">Software</a><a href="#logs">Logs</a><a href="#about">About</a><a href="mailto:info@perfectparadox.co.uk">Contact</a></div>
 </nav>
-<main class="pt-24">
-<!-- Hero Section -->
-<section id="home" class="min-h-[921px] flex flex-col justify-center px-12 relative overflow-hidden">
-<div class="absolute top-12 right-12 text-right opacity-40 font-body text-xs leading-relaxed">
-                STATUS: ENCRYPTED<br/>
-                UPLINK: ACTIVE<br/>
-                COORDINATES: 54.5973° N, 5.9301° W
-            </div>
-<div class="max-w-6xl">
-<h1 class="font-headline font-bold text-7xl md:text-[10rem] leading-none uppercase tracking-tighter mb-8">
-                    PERFECT<br/>PARADOX<br/>LTD
-                </h1>
-<div class="flex flex-col md:flex-row md:items-end gap-8">
-<p class="font-body text-xl md:text-2xl text-outline max-w-xl uppercase">
-                        Building the future of decentralized intelligence.
-                    </p>
-<div class="h-[1px] flex-grow bg-outline-variant mb-3 hidden md:block"></div>
-<div class="font-body text-sm text-primary flex items-center gap-2">
-<span class="material-symbols-outlined text-sm">terminal</span>
-                        VER: 1.0.4-STABLE
-                    </div>
-</div>
-</div>
+
+<div class="page">
+
+<section class="hero">
+  <div class="inner">
+    <div class="eyebrow">Independent Mac software studio</div>
+    <h1 class="wordmark"><div class="l1">Perfect</div><div class="l2">Paradox</div></h1>
+    <p class="sub">Powerful Mac software that asks nothing of you. It runs entirely on your machine — no cloud, no accounts, no tracking. You buy it once, and you own it.</p>
+    <div class="meta">
+      <span class="chip"><b>On-device</b> · always</span>
+      <span class="chip"><b>One-time</b> · no subscriptions</span>
+      <span class="chip"><b>Zero telemetry</b> · by design</span>
+    </div>
+  </div>
+  <div class="scrollcue">Scroll</div>
 </section>
-<!-- Tonal Shift Separator -->
-<div class="h-32 bg-surface-container-low flex items-center px-12 border-y border-outline-variant/20">
-<div class="font-body text-xs tracking-[0.3em] text-outline">INITIALIZING CORE ARCHITECTURE... 100%</div>
-</div>
-<!-- About Section -->
-<section class="py-24 px-12 grid grid-cols-1 md:grid-cols-12 gap-12 bg-surface">
-<div class="md:col-span-4">
-<h2 class="font-headline font-bold text-4xl uppercase tracking-widest text-primary sticky top-32">
-                    ABOUT.SYS
-                </h2>
-</div>
-<div class="md:col-span-8 space-y-12">
-<div class="border-l-2 border-primary pl-8 py-4">
-<h3 class="font-headline text-3xl md:text-5xl font-bold uppercase mb-8 leading-tight">
-                        WE BUILD AI-POWERED TOOLS AND DECENTRALIZED SOFTWARE.
-                    </h3>
-<p class="font-body text-lg text-outline leading-relaxed max-w-2xl">
-                        Perfect Paradox Ltd is a high-conviction technology laboratory headquartered in Northern Ireland, UK. We operate at the intersection of privacy and processing, engineering protocols that empower the individual over the institution.
-                    </p>
-</div>
-<div class="grid grid-cols-1 md:grid-cols-2 gap-8 pt-12">
-<div class="bg-surface-container-low p-10">
-<span class="font-body text-xs text-primary block mb-4">[LOCATION]</span>
-<p class="font-headline text-xl uppercase font-bold text-on-surface">United Kingdom / Northern Ireland</p>
-</div>
-<div class="bg-surface-container-low p-10">
-<span class="font-body text-xs text-primary block mb-4">[MODEL]</span>
-<p class="font-headline text-xl uppercase font-bold text-on-surface">Decentralized R&amp;D Laboratory</p>
-</div>
-</div>
-</div>
+
+<section class="band" id="principles">
+  <div class="wrap manifesto rv">
+    <div class="label">// What we believe</div>
+    <h2>Great software shouldn't <em>cost you your privacy</em> — or a monthly fee.</h2>
+    <div class="principles">
+      <div class="principle"><div class="n">01</div><div><h3>On<br>Device</h3><p>Everything happens on your Mac. Your files, notes and screens never leave it. There is no server to trust because there is no server.</p></div></div>
+      <div class="principle"><div class="n">02</div><div><h3>Buy<br>Once</h3><p>A single, fair price. No subscriptions, no renewals, no hostage-ware. It works on every Mac you own, forever.</p></div></div>
+      <div class="principle"><div class="n">03</div><div><h3>Zero<br>Telemetry</h3><p>We literally cannot see what you do. No analytics, no phone-home, not even crash pings. Privacy by architecture, not by promise.</p></div></div>
+      <div class="principle"><div class="n">04</div><div><h3>Signed<br>&amp; Safe</h3><p>Every app is notarised by Apple and verified end-to-end before it updates. Small, focused tools — each does one thing exceptionally well.</p></div></div>
+    </div>
+  </div>
 </section>
-<!-- Products (Bento Grid) — ALL CENSORED -->
-<section id="projects" class="py-24 px-12 bg-surface-container-lowest">
-<div class="mb-16 flex justify-between items-end">
-<h2 class="font-headline font-bold text-4xl uppercase tracking-widest text-primary">PROJECT_LOGS</h2>
-<div class="font-body text-xs text-outline uppercase tracking-widest">Selected Output</div>
-</div>
-<div class="grid grid-cols-1 md:grid-cols-4 gap-1">
-<!-- Project 1 — BR3IN (FLAGSHIP) -->
-<div class="md:col-span-4 bg-surface-container-low border border-outline-variant/30 p-12 flex flex-col justify-between relative overflow-hidden">
-<div>
-<div class="flex justify-between items-start mb-8">
-<span class="font-body text-xs text-outline">// STATUS: <span class="text-[#00ff88]">DEVELOPING</span></span>
-<span class="material-symbols-outlined text-outline-variant text-4xl">lock</span>
-</div>
-<h3 class="font-headline text-6xl md:text-8xl font-bold uppercase tracking-widest text-primary">BR3IN</h3>
-<div class="mt-4 font-body text-xs text-[#00ff88] tracking-[0.3em]">FLAGSHIP PRODUCT</div>
-</div>
-<div class="mt-8 space-y-2">
-<p class="font-body text-sm text-outline-variant uppercase tracking-widest">######### ## ######## ########### #### ######## ######</p>
-<p class="font-body text-sm text-outline-variant/40 uppercase tracking-widest">######## ##### ## ######### ###### #### ## ########</p>
-<p class="font-body text-sm text-outline-variant/20 uppercase tracking-widest">##### ### ####### #### ######## ##### ## ### #########</p>
-</div>
-<div class="absolute bottom-4 right-4 font-body text-[10px] text-outline-variant/30 tracking-widest">[ DETAILS REDACTED ]</div>
-</div>
-<!-- Project 2 — C0RTEX -->
-<div class="md:col-span-2 bg-surface-container-low border border-outline-variant/30 p-12 flex flex-col justify-between relative overflow-hidden">
-<div>
-<div class="flex justify-between items-start mb-8">
-<span class="font-body text-xs text-outline">// STATUS: <span class="text-[#ffaa00]">DEVELOPING</span></span>
-<span class="material-symbols-outlined text-outline-variant text-4xl">lock</span>
-</div>
-<h3 class="font-headline text-4xl md:text-5xl font-bold uppercase tracking-widest text-primary">C0RTEX</h3>
-</div>
-<div class="mt-8 space-y-2">
-<p class="font-body text-sm text-outline-variant uppercase tracking-widest">########## ## ##### #########</p>
-<p class="font-body text-sm text-outline-variant/40 uppercase tracking-widest">######## ##### ## #########</p>
-<p class="font-body text-sm text-outline-variant/20 uppercase tracking-widest">##### ### ####### ####</p>
-</div>
-<div class="absolute bottom-4 right-4 font-body text-[10px] text-outline-variant/30 tracking-widest">[ REDACTED ]</div>
-</div>
-<!-- Project 3 — MON1TOR -->
-<div class="md:col-span-2 bg-surface-container-low border border-outline-variant/30 p-12 flex flex-col justify-between relative overflow-hidden">
-<div>
-<div class="flex justify-between items-start mb-8">
-<span class="font-body text-xs text-outline">// STATUS: <span class="text-[#ffaa00]">DEVELOPING</span></span>
-<span class="material-symbols-outlined text-outline-variant text-4xl">lock</span>
-</div>
-<h3 class="font-headline text-4xl md:text-5xl font-bold uppercase tracking-widest text-primary">MON1TOR</h3>
-</div>
-<div class="mt-8 space-y-2">
-<p class="font-body text-sm text-outline-variant uppercase tracking-widest">########## ## ##### #########</p>
-<p class="font-body text-sm text-outline-variant/40 uppercase tracking-widest">######## ##### ## #########</p>
-<p class="font-body text-sm text-outline-variant/20 uppercase tracking-widest">##### ### ####### ####</p>
-</div>
-<div class="absolute bottom-4 right-4 font-body text-[10px] text-outline-variant/30 tracking-widest">[ REDACTED ]</div>
-</div>
-</div>
+
+<section class="band" id="software">
+  <div class="wrap products rv">
+    <div class="head">
+      <div><div class="label">// Shipping now</div><h2 class="h2">Mac Software</h2></div>
+      <div class="count">[ 5 apps · macOS 14+ ]</div>
+    </div>
+    <div class="plist">
+      <a class="prod" href="https://curtain.perfectparadox.co.uk" target="_blank" rel="noopener">
+        <img src="icons/curtain.png" alt="Curtain">
+        <div class="info"><div class="nm">Curtain</div><div class="ds">Auto Do-Not-Disturb the moment you share your screen. Never flash a private message to the whole call again.</div></div>
+        <div class="right"><span class="price">$9.99</span><span class="arrow">View →</span></div>
+      </a>
+      <a class="prod" href="https://notebound.perfectparadox.co.uk" target="_blank" rel="noopener">
+        <img src="icons/notebound.png" alt="Notebound">
+        <div class="info"><div class="nm">Notebound</div><div class="ds">Apple Notes ↔ Markdown, both ways. Get years of notes out of Apple Notes as clean, AI-ready files.</div></div>
+        <div class="right"><span class="price">$9.99</span><span class="arrow">View →</span></div>
+      </a>
+      <a class="prod" href="https://everyfile.perfectparadox.co.uk" target="_blank" rel="noopener">
+        <img src="icons/everyfile.png" alt="Everyfile">
+        <div class="info"><div class="nm">Everyfile</div><div class="ds">Find any file on your Mac, instantly. A keystroke away, searching names the second you type.</div></div>
+        <div class="right"><span class="price">$19.99</span><span class="arrow">View →</span></div>
+      </a>
+      <a class="prod" href="https://evergreen.perfectparadox.co.uk" target="_blank" rel="noopener">
+        <img src="icons/evergreen.png" alt="Evergreen">
+        <div class="info"><div class="nm">Evergreen</div><div class="ds">Keep every app up to date from one place — signature-verified, atomic, safe. Updates without the chaos.</div></div>
+        <div class="right"><span class="price">$19.99</span><span class="arrow">View →</span></div>
+      </a>
+      <a class="prod" href="https://screenshelf.perfectparadox.co.uk" target="_blank" rel="noopener">
+        <img src="icons/screenshelf.png" alt="Screenshelf">
+        <div class="info"><div class="nm">Screenshelf</div><div class="ds">Search the text inside your screenshots. On-device OCR turns your pile of captures into a searchable shelf.</div></div>
+        <div class="right"><span class="price">$24.99</span><span class="arrow">View →</span></div>
+      </a>
+    </div>
+  </div>
 </section>
-<!-- Mac Software (shipping, public) -->
-<section class="py-32 px-12 bg-surface-container-lowest">
-<div class="max-w-6xl mx-auto">
-<div class="flex justify-between items-end mb-16">
-<h2 class="font-headline text-4xl md:text-6xl font-bold uppercase tracking-tighter text-primary">MAC<br/>SOFTWARE</h2>
-<a href="pricing.html" class="font-body text-xs text-outline hover:text-primary tracking-widest uppercase border-b border-outline-variant pb-1">View all &amp; pricing →</a>
-</div>
-<p class="font-body text-sm text-outline-variant max-w-2xl mb-12 leading-relaxed">Native macOS utilities. One-time purchase, no subscription, no telemetry. Built privacy-first, running entirely on your Mac.</p>
-<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-1">
-<div class="bg-surface-container-low border border-outline-variant/30 p-8 flex flex-col justify-between min-h-[220px]">
-<div>
-<div class="font-body text-xs tracking-[0.3em] mb-6" style="color:#2E9159">// LAUNCHING SOON</div>
-<h3 class="font-headline text-3xl font-bold uppercase tracking-wide text-primary">Evergreen</h3>
-</div>
-<div class="mt-6">
-<p class="font-body text-sm text-outline-variant leading-relaxed">Every app on your Mac, up to date. One click.</p>
-<p class="font-body text-xs text-outline mt-3">$19.99 · one-time</p>
-<a href="https://evergreen.perfectparadox.co.uk" target="_blank" rel="noopener" class="inline-block mt-4 font-body text-xs text-outline hover:text-primary tracking-widest uppercase border-b border-outline-variant pb-1">View →</a>
-</div>
-</div>
-<div class="bg-surface-container-low border border-outline-variant/30 p-8 flex flex-col justify-between min-h-[220px]">
-<div>
-<div class="font-body text-xs tracking-[0.3em] mb-6" style="color:#4A4FB0">// LAUNCHING SOON</div>
-<h3 class="font-headline text-3xl font-bold uppercase tracking-wide text-primary">Notebound</h3>
-</div>
-<div class="mt-6">
-<p class="font-body text-sm text-outline-variant leading-relaxed">Move your Markdown notes into Apple Notes. Intact.</p>
-<p class="font-body text-xs text-outline mt-3">$9.99 · one-time</p>
-<a href="https://notebound.perfectparadox.co.uk" target="_blank" rel="noopener" class="inline-block mt-4 font-body text-xs text-outline hover:text-primary tracking-widest uppercase border-b border-outline-variant pb-1">View →</a>
-</div>
-</div>
-<div class="bg-surface-container-low border border-outline-variant/30 p-8 flex flex-col justify-between min-h-[220px]">
-<div>
-<div class="font-body text-xs tracking-[0.3em] mb-6" style="color:#009EB5">// LAUNCHING SOON</div>
-<h3 class="font-headline text-3xl font-bold uppercase tracking-wide text-primary">Everyfile</h3>
-</div>
-<div class="mt-6">
-<p class="font-body text-sm text-outline-variant leading-relaxed">Find any file by name. Instantly.</p>
-<p class="font-body text-xs text-outline mt-3">$19.99 · one-time</p>
-<a href="https://everyfile.perfectparadox.co.uk" target="_blank" rel="noopener" class="inline-block mt-4 font-body text-xs text-outline hover:text-primary tracking-widest uppercase border-b border-outline-variant pb-1">View →</a>
-</div>
-</div>
-<div class="bg-surface-container-low border border-outline-variant/30 p-8 flex flex-col justify-between min-h-[220px]">
-<div>
-<div class="font-body text-xs tracking-[0.3em] mb-6" style="color:#D98521">// LAUNCHING SOON</div>
-<h3 class="font-headline text-3xl font-bold uppercase tracking-wide text-primary">Screenshelf</h3>
-</div>
-<div class="mt-6">
-<p class="font-body text-sm text-outline-variant leading-relaxed">Search the text inside your screenshots.</p>
-<p class="font-body text-xs text-outline mt-3">$24.99 · one-time</p>
-<a href="https://screenshelf.perfectparadox.co.uk" target="_blank" rel="noopener" class="inline-block mt-4 font-body text-xs text-outline hover:text-primary tracking-widest uppercase border-b border-outline-variant pb-1">View →</a>
-</div>
-</div>
-<div class="bg-surface-container-low border border-outline-variant/30 p-8 flex flex-col justify-between min-h-[220px]">
-<div>
-<div class="font-body text-xs tracking-[0.3em] mb-6" style="color:#C0392B">// SHIPPING</div>
-<h3 class="font-headline text-3xl font-bold uppercase tracking-wide text-primary">Curtain</h3>
-</div>
-<div class="mt-6">
-<p class="font-body text-sm text-outline-variant leading-relaxed">Auto Do-Not-Disturb the moment you share your screen.</p>
-<p class="font-body text-xs text-outline mt-3">$9.99 · one-time</p>
-<a href="https://curtain.perfectparadox.co.uk" target="_blank" rel="noopener" class="inline-block mt-4 font-body text-xs text-outline hover:text-primary tracking-widest uppercase border-b border-outline-variant pb-1">View →</a>
-</div>
-</div>
-</div>
-</div>
+
+<section class="band" id="logs">
+  <div class="wrap logs rv">
+    <div class="label">// In development</div>
+    <h2 class="h2">Project_Logs</h2>
+    <div class="loglist">
+      <div class="log">
+        <div class="badge"><span class="dot"></span>Status: Developing <span class="lock">🔒</span></div>
+        <div>
+          <div class="nm">BR3IN <span class="tag">Flagship</span></div>
+          <div class="redacted">
+            <span class="bar" style="width:120px"></span><span class="bar" style="width:60px"></span><span class="bar" style="width:90px"></span><span class="bar" style="width:48px"></span><span class="bar" style="width:140px"></span>
+            <span class="note">[ details redacted ]</span>
+          </div>
+        </div>
+      </div>
+      <div class="log">
+        <div class="badge"><span class="dot"></span>Status: Developing <span class="lock">🔒</span></div>
+        <div>
+          <div class="nm">C0RTEX</div>
+          <div class="redacted">
+            <span class="bar" style="width:100px"></span><span class="bar" style="width:72px"></span><span class="bar" style="width:54px"></span><span class="bar" style="width:110px"></span>
+            <span class="note">[ redacted ]</span>
+          </div>
+        </div>
+      </div>
+      <div class="log">
+        <div class="badge"><span class="dot"></span>Status: Developing <span class="lock">🔒</span></div>
+        <div>
+          <div class="nm">MON1TOR</div>
+          <div class="redacted">
+            <span class="bar" style="width:88px"></span><span class="bar" style="width:64px"></span><span class="bar" style="width:120px"></span><span class="bar" style="width:40px"></span>
+            <span class="note">[ redacted ]</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
-<!-- Values -->
-<section class="py-32 px-12 bg-surface">
-<div class="max-w-4xl mx-auto space-y-24">
-<div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
-<div>
-<h4 class="font-headline text-2xl font-bold uppercase mb-4 text-primary tracking-widest">PRIVACY-FIRST</h4>
-<p class="font-body text-outline leading-relaxed">Encryption is not an option; it is the default state of every packet transmitted across our network protocols.</p>
-</div>
-<div class="text-right hidden md:block">
-<span class="font-body text-[10rem] font-bold text-surface-container-high leading-none select-none">01</span>
-</div>
-</div>
-<div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
-<div class="text-left hidden md:block">
-<span class="font-body text-[10rem] font-bold text-surface-container-high leading-none select-none">02</span>
-</div>
-<div class="md:text-right">
-<h4 class="font-headline text-2xl font-bold uppercase mb-4 text-primary tracking-widest">DECENTRALIZATION</h4>
-<p class="font-body text-outline leading-relaxed">No central point of failure. No single source of authority. We build systems that survive in the wild.</p>
-</div>
-</div>
-<div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
-<div>
-<h4 class="font-headline text-2xl font-bold uppercase mb-4 text-primary tracking-widest">OPEN INNOVATION</h4>
-<p class="font-body text-outline leading-relaxed">Transparency breeds security. Our core protocols are open to inspection by the global technical community.</p>
-</div>
-<div class="text-right hidden md:block">
-<span class="font-body text-[10rem] font-bold text-surface-container-high leading-none select-none">03</span>
-</div>
-</div>
-<div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
-<div class="text-left hidden md:block">
-<span class="font-body text-[10rem] font-bold text-surface-container-high leading-none select-none">04</span>
-</div>
-<div class="md:text-right">
-<h4 class="font-headline text-2xl font-bold uppercase mb-4 text-primary tracking-widest">USER SOVEREIGNTY</h4>
-<p class="font-body text-outline leading-relaxed">You own your keys. You own your data. You own your digital identity. We provide the tools to enforce it.</p>
-</div>
-</div>
-</div>
+
+<section class="band" id="about">
+  <div class="wrap company rv">
+    <div class="grid">
+      <div>
+        <div class="label">// The studio</div>
+        <h2 class="h2">About.Sys</h2>
+        <p>Perfect Paradox is an independent software company building focused Mac tools for people who want their computer to work for them — not the other way around.</p>
+        <p>The paradox in our name is simple: software can be powerful <em>and</em> respectful. It can be a real business <em>and</em> never sell you out. We build as if every app were running on our own machine — because it is.</p>
+      </div>
+      <div class="facts">
+        <div class="fact"><span class="k">Entity</span><span class="v">Perfect Paradox Ltd</span></div>
+        <div class="fact"><span class="k">Company No.</span><span class="v">NI739317</span></div>
+        <div class="fact"><span class="k">Registered</span><span class="v">Northern Ireland, UK</span></div>
+        <div class="fact"><span class="k">Data</span><span class="v">ICO Registered</span></div>
+        <div class="fact"><span class="k">Platform</span><span class="v">macOS 14 Sonoma +</span></div>
+        <div class="fact"><span class="k">Contact</span><span class="v">info@perfectparadox.co.uk</span></div>
+      </div>
+    </div>
+  </div>
 </section>
-<!-- SYNØPTIC MEDIA Section -->
-<section id="media" class="py-24 px-12 bg-surface-container-lowest border-t border-outline-variant/20">
-<div class="mb-16 flex justify-between items-end">
-<h2 class="font-headline font-bold text-4xl uppercase tracking-widest text-primary">SYN&Oslash;PTIC_MEDIA</h2>
-<div class="font-body text-xs text-outline uppercase tracking-widest">Content Division</div>
-</div>
-<div class="border-l-2 border-primary pl-8 py-4 mb-16 max-w-3xl">
-<p class="font-body text-lg text-outline leading-relaxed">
-Our media arm. Original content across science, nature, dark history, true crime and the unexplained. Each channel is an independent broadcast node under the SYN&Oslash;PTIC network.
-</p>
-</div>
-<div class="grid grid-cols-1 md:grid-cols-6 gap-1">
-<!-- SYNØPTIC BUG — LIVE -->
-<a href="https://www.youtube.com/channel/UCEwiCqdbpN9AMdGrpa8VkZw" target="_blank" rel="noopener" class="group md:col-span-2 bg-surface-container-low border border-outline-variant/30 p-12 flex flex-col justify-between relative overflow-hidden hover:bg-surface-container-high transition-colors duration-300">
-<div>
-<div class="flex justify-between items-start mb-6">
-<span class="font-body text-xs text-outline">// STATUS: <span class="text-[#ff3333]">LIVE</span></span>
-<span class="material-symbols-outlined text-outline group-hover:text-primary text-3xl transition-colors">play_circle</span>
-</div>
-<h3 class="font-headline text-3xl md:text-4xl font-bold uppercase tracking-widest text-primary">SYN&Oslash;PTIC<br/>BUG</h3>
-<div class="mt-3 font-body text-xs text-outline tracking-[0.3em]">SCIENCE &amp; NATURE</div>
-</div>
-<div class="mt-8 flex items-center gap-2 font-body text-xs text-outline-variant group-hover:text-primary transition-colors">
-<span class="material-symbols-outlined text-sm">open_in_new</span>
-<span class="tracking-widest">WATCH ON YOUTUBE</span>
-</div>
-</a>
-<!-- THE FINAL HOURS (ex MUSIC) — LIVE -->
-<a href="https://www.youtube.com/channel/UCZ8DIfZSyZnnQ1SPJT5A5qA" target="_blank" rel="noopener" class="group md:col-span-2 bg-surface-container-low border border-outline-variant/30 p-12 flex flex-col justify-between relative overflow-hidden hover:bg-surface-container-high transition-colors duration-300">
-<div>
-<div class="flex justify-between items-start mb-6">
-<span class="font-body text-xs text-outline">// STATUS: <span class="text-[#ff3333]">LIVE</span></span>
-<span class="material-symbols-outlined text-outline group-hover:text-primary text-3xl transition-colors">play_circle</span>
-</div>
-<h3 class="font-headline text-3xl md:text-4xl font-bold uppercase tracking-widest text-primary">THE FINAL<br/>HOURS</h3>
-<div class="mt-3 font-body text-xs text-outline tracking-[0.3em]">DISASTER &amp; SURVIVAL</div>
-</div>
-<div class="mt-8 flex items-center gap-2 font-body text-xs text-outline-variant group-hover:text-primary transition-colors">
-<span class="material-symbols-outlined text-sm">open_in_new</span>
-<span class="tracking-widest">WATCH ON YOUTUBE</span>
-</div>
-</a>
-<!-- ARQUIVO SOMBRIO (ex TALES) — LIVE -->
-<a href="https://www.youtube.com/channel/UCt3VdCuMyjNrJxqn3CJf0Lw" target="_blank" rel="noopener" class="group md:col-span-2 bg-surface-container-low border border-outline-variant/30 p-12 flex flex-col justify-between relative overflow-hidden hover:bg-surface-container-high transition-colors duration-300">
-<div>
-<div class="flex justify-between items-start mb-6">
-<span class="font-body text-xs text-outline">// STATUS: <span class="text-[#ff3333]">LIVE</span></span>
-<span class="material-symbols-outlined text-outline group-hover:text-primary text-3xl transition-colors">play_circle</span>
-</div>
-<h3 class="font-headline text-3xl md:text-4xl font-bold uppercase tracking-widest text-primary">ARQUIVO<br/>SOMBRIO</h3>
-<div class="mt-3 font-body text-xs text-outline tracking-[0.3em]">DARK HISTORY · BR</div>
-</div>
-<div class="mt-8 flex items-center gap-2 font-body text-xs text-outline-variant group-hover:text-primary transition-colors">
-<span class="material-symbols-outlined text-sm">open_in_new</span>
-<span class="tracking-widest">WATCH ON YOUTUBE</span>
-</div>
-</a>
-<!-- DINERO OSCURO (ex FINANZAS) — LIVE -->
-<a href="https://www.youtube.com/channel/UCaObZerUmqF_I9Petni2_Dg" target="_blank" rel="noopener" class="group md:col-span-2 bg-surface-container-low border border-outline-variant/30 p-12 flex flex-col justify-between relative overflow-hidden hover:bg-surface-container-high transition-colors duration-300">
-<div>
-<div class="flex justify-between items-start mb-6">
-<span class="font-body text-xs text-outline">// STATUS: <span class="text-[#ff3333]">LIVE</span></span>
-<span class="material-symbols-outlined text-outline group-hover:text-primary text-3xl transition-colors">play_circle</span>
-</div>
-<h3 class="font-headline text-3xl md:text-4xl font-bold uppercase tracking-widest text-primary">DINERO<br/>OSCURO</h3>
-<div class="mt-3 font-body text-xs text-outline tracking-[0.3em]">FINANCIAL CRIME</div>
-</div>
-<div class="mt-8 flex items-center gap-2 font-body text-xs text-outline-variant group-hover:text-primary transition-colors">
-<span class="material-symbols-outlined text-sm">open_in_new</span>
-<span class="tracking-widest">WATCH ON YOUTUBE</span>
-</div>
-</a>
-<!-- SYNØPTIC EXPEDIENTES (ex CHRØNOS) — LIVE -->
-<a href="https://www.youtube.com/channel/UCz-6PY7F_2Bim5xEudfv8cg" target="_blank" rel="noopener" class="group md:col-span-2 bg-surface-container-low border border-outline-variant/30 p-12 flex flex-col justify-between relative overflow-hidden hover:bg-surface-container-high transition-colors duration-300">
-<div>
-<div class="flex justify-between items-start mb-6">
-<span class="font-body text-xs text-outline">// STATUS: <span class="text-[#ff3333]">LIVE</span></span>
-<span class="material-symbols-outlined text-outline group-hover:text-primary text-3xl transition-colors">play_circle</span>
-</div>
-<h3 class="font-headline text-3xl md:text-4xl font-bold uppercase tracking-widest text-primary">SYN&Oslash;PTIC<br/>EXPEDIENTES</h3>
-<div class="mt-3 font-body text-xs text-outline tracking-[0.3em]">MYSTERIES &amp; FILES</div>
-</div>
-<div class="mt-8 flex items-center gap-2 font-body text-xs text-outline-variant group-hover:text-primary transition-colors">
-<span class="material-symbols-outlined text-sm">open_in_new</span>
-<span class="tracking-widest">WATCH ON YOUTUBE</span>
-</div>
-</a>
-<!-- THE VELVET DOSSIER — LIVE -->
-<a href="https://www.youtube.com/channel/UC2hNB391haUxYOdxraAkuFg" target="_blank" rel="noopener" class="group md:col-span-2 bg-surface-container-low border border-outline-variant/30 p-12 flex flex-col justify-between relative overflow-hidden hover:bg-surface-container-high transition-colors duration-300">
-<div>
-<div class="flex justify-between items-start mb-6">
-<span class="font-body text-xs text-outline">// STATUS: <span class="text-[#ff3333]">LIVE</span></span>
-<span class="material-symbols-outlined text-outline group-hover:text-primary text-3xl transition-colors">play_circle</span>
-</div>
-<h3 class="font-headline text-3xl md:text-4xl font-bold uppercase tracking-widest text-primary">THE VELVET<br/>DOSSIER</h3>
-<div class="mt-3 font-body text-xs text-outline tracking-[0.3em]">QUIET LUXURY</div>
-</div>
-<div class="mt-8 flex items-center gap-2 font-body text-xs text-outline-variant group-hover:text-primary transition-colors">
-<span class="material-symbols-outlined text-sm">open_in_new</span>
-<span class="tracking-widest">WATCH ON YOUTUBE</span>
-</div>
-</a>
-<!-- Channel 7 — REDACTED -->
-<div class="md:col-span-6 bg-surface-container-low border border-outline-variant/30 p-12 flex flex-col justify-between relative overflow-hidden">
-<div>
-<div class="flex justify-between items-start mb-6">
-<span class="font-body text-xs text-outline">// STATUS: <span class="text-[#ffaa00]">DEVELOPING</span></span>
-<span class="material-symbols-outlined text-outline-variant text-3xl">lock</span>
-</div>
-<h3 class="font-headline text-3xl md:text-4xl font-bold uppercase tracking-widest text-outline-variant/60">SYN&Oslash;PTIC<br/>#########</h3>
-<div class="mt-3 font-body text-xs text-outline tracking-[0.3em]">##########</div>
-</div>
-<div class="mt-8 space-y-1">
-<p class="font-body text-sm text-outline-variant/40 uppercase tracking-widest">######## ##### ## ######### ###### #### ## ######## ##### ### ####### ####</p>
-</div>
-<div class="absolute bottom-4 right-4 font-body text-[10px] text-outline-variant/30 tracking-widest">[ COMING SOON ]</div>
-</div>
-</div>
-</section>
-<!-- Contact Section -->
-<section id="contact" class="py-24 px-12 border-t border-outline-variant/30">
-<div class="max-w-6xl">
-<h2 class="font-headline font-bold text-5xl uppercase mb-16 tracking-tight">CONTACT_DIRECTIVE</h2>
-<div class="grid grid-cols-1 md:grid-cols-2 gap-1">
-<a class="group bg-surface-container-low p-8 hover:bg-primary transition-colors duration-300" href="mailto:info@perfectparadox.co.uk">
-<span class="font-body text-[10px] text-outline group-hover:text-on-primary block mb-2">GENERAL_ENQUIRIES</span>
-<div class="flex justify-between items-center">
-<span class="font-headline text-sm md:text-base font-bold group-hover:text-on-primary">info@perfectparadox.co.uk</span>
-<span class="material-symbols-outlined text-sm group-hover:text-on-primary">alternate_email</span>
-</div>
-</a>
-<a class="group bg-surface-container-low p-8 hover:bg-primary transition-colors duration-300" href="mailto:legal@perfectparadox.co.uk">
-<span class="font-body text-[10px] text-outline group-hover:text-on-primary block mb-2">COMPLIANCE_LOGS</span>
-<div class="flex justify-between items-center">
-<span class="font-headline text-sm md:text-base font-bold group-hover:text-on-primary">legal@perfectparadox.co.uk</span>
-<span class="material-symbols-outlined text-sm group-hover:text-on-primary">gavel</span>
-</div>
-</a>
-</div>
-</div>
-</section>
-</main>
-<!-- Footer -->
-<footer class="bg-[#0e0e0e] text-[#919191] font-['JetBrains_Mono'] text-xs uppercase tracking-widest docked full-width bottom-0 w-full px-12 py-24 flex flex-col md:flex-row justify-between items-end gap-8 border-t border-outline-variant/10">
-<div class="flex flex-col gap-4">
-<div class="text-[#FFFFFF] font-bold text-lg mb-2">PERFECT PARADOX LTD</div>
-<p class="max-w-xs leading-loose">
-                REGISTERED IN NORTHERN IRELAND<br/>
-                COMPANY NUMBER: NI739317<br/>
-                OPERATING UNDER MONOLITH PROTOCOL 2026.
-            </p>
-<p class="mt-8">&copy;2026 PERFECT PARADOX LTD. ALL RIGHTS RESERVED.</p>
-</div>
-<div class="flex flex-col md:flex-row gap-12">
-<div class="flex flex-col gap-4">
-<span class="text-outline-variant">SYSTEM_DIRECTORIES</span>
-<a class="hover:text-[#FFFFFF] underline decoration-1 underline-offset-4" href="#home">INDEX.SYS</a>
-<a class="hover:text-[#FFFFFF] underline decoration-1 underline-offset-4" href="privacy.html">PRIVACY.EXE</a>
-<a class="hover:text-[#FFFFFF] underline decoration-1 underline-offset-4" href="terms.html">TERMS.SYS</a>
-<a class="hover:text-[#FFFFFF] underline decoration-1 underline-offset-4" href="pricing.html">PRICING.SYS</a>
-<a class="hover:text-[#FFFFFF] underline decoration-1 underline-offset-4" href="refund-policy.html">REFUNDS.SYS</a>
-</div>
-<div class="flex flex-col gap-4">
-<span class="text-outline-variant">NETWORK_NODES</span>
-<span class="text-outline-variant/50">BR3IN</span>
-<span class="text-outline-variant/50">C0RTEX</span>
-<span class="text-outline-variant/50">MON1TOR</span>
-</div>
-<div class="flex flex-col gap-4">
-<span class="text-outline-variant">MEDIA_NODES</span>
-<a href="#media" class="text-outline-variant/50 hover:text-[#FFFFFF]">SYN&Oslash;PTIC BUG</a>
-<a href="#media" class="text-outline-variant/50 hover:text-[#FFFFFF]">THE FINAL HOURS</a>
-<a href="#media" class="text-outline-variant/50 hover:text-[#FFFFFF]">ARQUIVO SOMBRIO</a>
-<a href="#media" class="text-outline-variant/50 hover:text-[#FFFFFF]">DINERO OSCURO</a>
-<a href="#media" class="text-outline-variant/50 hover:text-[#FFFFFF]">SYN&Oslash;PTIC EXPEDIENTES</a>
-<a href="#media" class="text-outline-variant/50 hover:text-[#FFFFFF]">THE VELVET DOSSIER</a>
-<span class="text-outline-variant/30">SYN&Oslash;PTIC #########</span>
-</div>
-</div>
+
+<footer>
+  <div class="c">© 2026 Perfect Paradox Ltd · NI739317 · Belfast, Northern Ireland</div>
+  <div class="lk"><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a><a href="refund-policy.html">Refunds</a><a href="pricing.html">Pricing</a><a href="mailto:info@perfectparadox.co.uk">info@perfectparadox.co.uk</a></div>
 </footer>
-</body></html>
+
+</div>
+
+<script>
+// starfield sutil
+(function(){const s=document.getElementById('stars');if(!s)return;let h='';for(let i=0;i<46;i++){const x=Math.random()*100,y=Math.random()*100,d=(Math.random()*4+2).toFixed(1),de=(Math.random()*4).toFixed(1);h+=`<i style="left:${x}%;top:${y}%;animation-duration:${d}s;animation-delay:${de}s"></i>`}s.innerHTML=h})();
+const io=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('in')})},{threshold:.12});
+document.querySelectorAll('.rv').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>
