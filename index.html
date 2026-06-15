@@ -11,12 +11,15 @@
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://perfectparadox.co.uk/">
 <meta property="og:site_name" content="Perfect Paradox">
-<meta name="twitter:card" content="summary">
+<meta property="og:image" content="https://perfectparadox.co.uk/brand/og.png">
+<meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Perfect Paradox — Mac software that respects you">
 <meta name="twitter:description" content="On-device. One-time. Zero telemetry. A small studio building Mac tools you actually own.">
-<!-- TODO marketing: brand og.png (1200x630) + favicon/apple-touch — pending brand asset decision (Diego) -->
+<meta name="twitter:image" content="https://perfectparadox.co.uk/brand/og.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/brand/favicon-32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/brand/apple-touch-icon.png">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Organization","name":"Perfect Paradox Ltd","url":"https://perfectparadox.co.uk/","description":"A small studio building macOS software that runs entirely on your Mac — one-time purchase, zero telemetry.","foundingLocation":"Belfast, Northern Ireland","identifier":"NI739317"}
+{"@context":"https://schema.org","@type":"Organization","name":"Perfect Paradox Ltd","url":"https://perfectparadox.co.uk/","logo":"https://perfectparadox.co.uk/brand/apple-touch-icon.png","description":"A small studio building macOS software that runs entirely on your Mac — one-time purchase, zero telemetry.","foundingLocation":"Belfast, Northern Ireland","identifier":"NI739317"}
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@400;500;600;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
@@ -73,8 +76,8 @@ body{background:var(--bg);color:var(--ink);font-family:'Archivo',sans-serif;over
 nav{position:fixed;top:0;left:0;right:0;height:64px;display:flex;align-items:center;justify-content:space-between;padding:0 60px;z-index:50;
   backdrop-filter:blur(10px);background:linear-gradient(180deg,rgba(6,6,7,.8),transparent)}
 nav .brand{display:flex;align-items:center;gap:13px;font-family:'JetBrains Mono',monospace;font-size:12.5px;letter-spacing:.34em;text-transform:uppercase;color:var(--ink)}
-nav .mono-mark{width:20px;height:20px;border:1px solid var(--silver);border-radius:50%;position:relative;flex:0 0 auto;overflow:hidden}
-nav .mono-mark::before{content:"";position:absolute;left:0;top:0;bottom:0;width:50%;background:var(--silver)}
+nav .mono-mark{width:22px;height:22px;flex:0 0 auto;object-fit:contain;animation:markglow 3s ease-in-out infinite}
+@keyframes markglow{0%,100%{filter:drop-shadow(0 0 0 rgba(220,216,208,0));transform:scale(1)}50%{filter:drop-shadow(0 0 7px rgba(220,216,208,.6));transform:scale(1.06)}}
 nav .links{display:flex;gap:28px;font-family:'JetBrains Mono',monospace;font-size:11.5px;letter-spacing:.22em;text-transform:uppercase}
 nav a{color:var(--dim);text-decoration:none;transition:.2s}nav a:hover{color:var(--ink)}
 
@@ -97,7 +100,7 @@ nav a{color:var(--dim);text-decoration:none;transition:.2s}nav a:hover{color:var
 @keyframes pulse{0%,100%{opacity:.3}50%{opacity:1}}
 
 /* ---------- sections ---------- */
-.band{border-top:1px solid var(--line);background:rgba(6,6,7,.76);backdrop-filter:blur(6px)}
+.band{border-top:1px solid var(--line);background:rgba(6,6,7,.93)}
 .wrap{max-width:1240px;margin:0 auto;padding:0 60px}
 .label{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.36em;text-transform:uppercase;color:var(--dim)}
 .h2{font-family:'Anton',sans-serif;text-transform:uppercase;line-height:.95}
@@ -116,7 +119,10 @@ nav a{color:var(--dim);text-decoration:none;transition:.2s}nav a:hover{color:var
 .products .head{display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:20px}
 .products h2{font-size:clamp(34px,5vw,62px);margin-top:24px}
 .products .count{font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.2em;color:var(--faint)}
-.plist{margin-top:60px;border-top:1px solid var(--line)}
+.plist{margin-top:28px;border-top:1px solid var(--line)}
+.catblock{margin-top:64px}
+.catblock:first-of-type{margin-top:56px}
+.catsub{color:var(--dim);max-width:620px;margin-top:12px;font-size:14px;line-height:1.65}
 .prod{display:grid;grid-template-columns:84px 1fr auto;gap:30px;align-items:center;padding:30px 8px;border-bottom:1px solid var(--line);
   text-decoration:none;color:inherit;transition:padding .28s,background .28s;position:relative}
 .prod::after{content:"";position:absolute;left:0;bottom:-1px;height:1px;width:0;background:var(--silver);transition:width .4s ease}
@@ -189,7 +195,7 @@ footer a{color:var(--dim);text-decoration:none}footer a:hover{color:var(--ink)}
 <div class="rail r"><span>Belfast · Northern Ireland</span></div>
 
 <nav>
-  <div class="brand"><span class="mono-mark"></span>PERFECT&nbsp;PARADOX</div>
+  <div class="brand"><img class="mono-mark" src="/brand/logo-mark.png" alt="Perfect Paradox" width="22" height="22">PERFECT&nbsp;PARADOX</div>
   <div class="links"><a href="#principles">Principles</a><a href="#software">Software</a><a href="#logs">Logs</a><a href="#about">About</a><a href="mailto:info@perfectparadox.co.uk">Contact</a></div>
 </nav>
 
@@ -199,7 +205,7 @@ footer a{color:var(--dim);text-decoration:none}footer a:hover{color:var(--ink)}
   <div class="inner">
     <div class="eyebrow">Independent Mac software studio</div>
     <h1 class="wordmark"><div class="l1">Perfect</div><div class="l2">Paradox</div></h1>
-    <p class="sub">Powerful Mac software that asks nothing of you. No account, no subscription, and nothing you do is ever sent to us. Your work stays on your Mac — and goes only where you choose to send it. Buy once, own it forever.</p>
+    <p class="sub">Powerful Mac software. Cloud AI and local — yours to own, never ours to see.</p>
     <div class="meta">
       <span class="chip"><b>Your data</b> · never ours</span>
       <span class="chip"><b>One-time</b> · no subscriptions</span>
@@ -228,12 +234,23 @@ footer a{color:var(--dim);text-decoration:none}footer a:hover{color:var(--ink)}
       <div><div class="label">// Shipping now</div><h2 class="h2">Mac Software</h2></div>
       <div class="count">[ 6 apps · macOS 14+ ]</div>
     </div>
+    <div class="catblock">
+      <div class="label">// Cloud AI · bring your own key</div>
+      <p class="catsub">AI that works for you, powered by your own provider key. Your data goes where you send it — never to us. Or run a local model and keep everything on your Mac.</p>
+    </div>
     <div class="plist">
       <a class="prod" href="https://ag3nt.perfectparadox.co.uk" target="_blank" rel="noopener">
         <img src="icons/ag3nt.png" alt="AG3NT">
         <div class="info"><div class="nm">AG3NT</div><div class="ds">Your team of AI specialists, on your Mac — marketing, accounts, support and more, coordinating with each other and remembering your business. Bring your own AI key; your chats stay yours.</div></div>
         <div class="right"><span class="price">from $99</span><span class="arrow">View →</span></div>
       </a>
+    </div>
+
+    <div class="catblock">
+      <div class="label">// Local · runs entirely on your Mac</div>
+      <p class="catsub">Your files never leave your machine. No cloud, no server, nothing to trust — because there's nothing in the middle.</p>
+    </div>
+    <div class="plist">
       <a class="prod" href="https://curtain.perfectparadox.co.uk" target="_blank" rel="noopener">
         <img src="icons/curtain.png" alt="Curtain">
         <div class="info"><div class="nm">Curtain</div><div class="ds">Auto Do-Not-Disturb the moment you share your screen. Never flash a private message to the whole call again.</div></div>
