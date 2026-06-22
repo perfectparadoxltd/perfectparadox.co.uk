@@ -4,9 +4,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Software &amp; Pricing — Perfect Paradox</title>
-<meta name="description" content="Perfect Paradox Mac software — one-time purchase, on-device, zero telemetry. Five focused macOS tools, each with a free trial. Pay once, own your license.">
+<meta name="description" content="Perfect Paradox software — on-device Mac apps as a one-time purchase, plus self-hosted cloud services by subscription. Zero telemetry, a free trial on everything.">
 <meta property="og:title" content="Software &amp; Pricing — Perfect Paradox">
-<meta property="og:description" content="One-time purchase. On-device. Zero telemetry. Five focused Mac tools, each with a free trial.">
+<meta property="og:description" content="On-device Mac apps (one-time) and self-hosted cloud services (subscription). Zero telemetry, free trials on everything.">
 <meta property="og:type" content="website">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@400;500;600;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
@@ -63,6 +63,11 @@ nav .links a{color:var(--dim);transition:.2s}nav .links a:hover{color:var(--ink)
 
 /* product cards */
 .cards{padding:46px 0 30px;display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--line);border:1px solid var(--line)}
+.cards.solo{grid-template-columns:1fr}
+.grouplabel{display:flex;align-items:center;gap:16px;margin-top:8px;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.36em;text-transform:uppercase;color:var(--dim)}
+.grouplabel::after{content:"";flex:1;height:1px;background:var(--line)}
+.grouplabel b{color:var(--silver);font-weight:500}
+.card .tag{font-family:'JetBrains Mono',monospace;font-size:9.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--bg);background:var(--silver);padding:2px 7px;border-radius:3px}
 .card{background:var(--bg);padding:30px 28px;display:grid;grid-template-columns:60px 1fr;gap:20px;align-items:start;transition:background .28s,transform .28s;position:relative}
 .card:hover{background:#0d0d0f}
 .card img{width:58px;height:58px;border-radius:13px;box-shadow:0 8px 26px rgba(0,0,0,.5);transition:transform .28s}
@@ -117,10 +122,11 @@ footer .lk a{color:var(--dim)}footer .lk a:hover{color:var(--ink)}
 <section class="hero wrap">
   <div class="eyebrow">// Pricing</div>
   <h1>Software<br><em>&amp; Pricing</em></h1>
-  <p class="sub">Native macOS tools sold as a one-time purchase. No subscriptions, no telemetry, nothing leaves your Mac. Every app ships with a free trial — pay once, own your license.</p>
+  <p class="sub">Two kinds of product. Native Mac apps you buy once and run entirely on-device — and cloud services billed by subscription. Everything ships with a free trial.</p>
 </section>
 
 <section class="wrap">
+  <div class="grouplabel"><b>Local</b> — on your Mac · one-time purchase · on-device</div>
   <div class="cards">
 
     <a class="card" href="https://ag3nt.perfectparadox.co.uk" target="_blank" rel="noopener">
@@ -225,10 +231,25 @@ footer .lk a{color:var(--dim)}footer .lk a:hover{color:var(--ink)}
   </div>
 </section>
 
+<section class="wrap">
+  <div class="grouplabel"><b>Cloud</b> — subscription · self-hosted, your data stays yours</div>
+  <div class="cards solo">
+    <a class="card" href="https://mon1tor.perfectparadox.co.uk" target="_blank" rel="noopener">
+      <img src="icons/mon1tor.svg" alt="MON1TOR">
+      <div>
+        <div class="top"><span class="nm">MON1TOR</span><span class="price">Free · from $49/mo</span></div>
+        <div class="cat">Infrastructure monitoring</div>
+        <p class="ds">Every machine in one dashboard — live CPU, RAM, disk, network and container metrics, uptime, SSL expiry, cron heartbeats and public status pages, with forecasting that flags trouble before it lands. Self-hosted, so your data never leaves your servers.</p>
+        <span class="view">View &amp; Plans <span class="arr">→</span></span>
+      </div>
+    </a>
+  </div>
+</section>
+
 <section class="band">
   <div class="wrap">
     <div class="label">// What you get</div>
-    <h2>Every purchase includes</h2>
+    <h2>Every Mac app includes</h2>
     <div class="incl">
       <div class="row"><span class="tick">—</span><span>A perpetual license for the major version you buy — it never expires and never stops working.</span></div>
       <div class="row"><span class="tick">—</span><span>A free trial before you pay (14 days on all apps unless stated otherwise).</span></div>
