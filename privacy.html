@@ -48,7 +48,7 @@ body {
 
 <!-- Nav -->
 <nav class="bg-[#131313] text-[#FFFFFF] font-['Space_Grotesk'] uppercase tracking-[0.2em] text-sm fixed w-full z-40 flex justify-between items-center px-12 py-6">
-  <a href="index.html" class="text-2xl font-bold tracking-tighter text-[#FFFFFF]">MONOLITH.PROTOCOL</a>
+  <a href="index.html" class="text-2xl font-bold tracking-tighter text-[#FFFFFF]">PERFECT PARADOX</a>
   <a href="index.html" class="text-[#919191] hover:text-[#FFFFFF] transition-colors flex items-center gap-2">
     <span class="material-symbols-outlined text-sm">arrow_back</span> BACK TO SYSTEM
   </a>
@@ -59,7 +59,7 @@ body {
   <div class="mb-4 font-body text-xs text-outline uppercase tracking-[0.3em]">SYSTEM_DIRECTORIES / PRIVACY.EXE</div>
   <h1 class="font-headline font-bold text-5xl md:text-7xl uppercase tracking-tighter mb-4 text-primary">PRIVACY<br/>POLICY</h1>
   <div class="h-[1px] bg-outline-variant/30 my-8"></div>
-  <p class="font-body text-sm text-outline mb-12">Effective Date: 30 March 2026 &mdash; Last Updated: 30 March 2026</p>
+  <p class="font-body text-sm text-outline mb-12">Effective Date: 30 March 2026 &mdash; Last Updated: 24 June 2026</p>
 
   <div class="space-y-12 font-body text-sm leading-relaxed text-on-surface/90">
 
@@ -75,15 +75,22 @@ body {
     <!-- 1. Introduction -->
     <section>
       <h2 class="font-headline font-bold text-2xl uppercase tracking-wider text-primary mb-4">1. INTRODUCTION</h2>
-      <p class="mb-4">Perfect Paradox Ltd ("Company", "we", "us", "our") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, and protect your personal data when you visit our website at perfectparadox.co.uk (the "Website").</p>
-      <p class="mb-4">This policy applies only to this Website. Our products have their own separate privacy policies, available on their respective websites.</p>
-      <p>This policy is issued in compliance with:</p>
+      <p class="mb-4">Perfect Paradox Ltd ("Company", "we", "us", "our") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, and protect your personal data when you visit our website at perfectparadox.co.uk (the "Website") and when you use our <strong class="text-primary">buy-once Mac apps</strong>.</p>
+      <p class="mb-4">Perfect Paradox delivers software in <strong class="text-primary">four ways</strong>, and the privacy position differs for each:</p>
+      <ul class="list-none mt-2 space-y-2 pl-4">
+        <li>— <strong class="text-primary">(1) Cloud AI (bring your own key)</strong> — Mac apps that use your own AI provider key. Your data goes wherever you direct it; it never passes through Perfect Paradox. One-time purchase.</li>
+        <li>— <strong class="text-primary">(2) Self-hosted</strong> — software you run on your own server. Your data never leaves your infrastructure. One-time purchase.</li>
+        <li>— <strong class="text-primary">(3) Hosted by us</strong> — services we host on your behalf, such as <strong class="text-primary">C0RTEX</strong> (web chat) and <strong class="text-primary">SYN4PSE</strong> (voice; coming soon). A private, isolated, encrypted instance, on a cancellable monthly subscription. Here Perfect Paradox acts as <strong class="text-primary">data processor</strong> — see Section 5A.</li>
+        <li>— <strong class="text-primary">(4) Local</strong> — apps that run entirely on your Mac; your files do not leave the device. One-time purchase.</li>
+      </ul>
+      <p class="mt-4">This Website-and-apps policy applies to models (1), (2) and (4) and to this Website. For the <strong class="text-primary">Hosted</strong> model (3), the controller/processor split and the full detail are governed by the product-specific Privacy Policy and Data Processing Agreement (see Section 5A).</p>
+      <p class="mt-4">This policy is issued in compliance with:</p>
       <ul class="list-none mt-2 space-y-1 pl-4">
         <li>— The UK General Data Protection Regulation (UK GDPR)</li>
         <li>— The Data Protection Act 2018</li>
         <li>— The Privacy and Electronic Communications Regulations 2003 (PECR)</li>
       </ul>
-      <p class="mt-4">For the purposes of data protection law, Perfect Paradox Ltd is the <strong class="text-primary">data controller</strong>.</p>
+      <p class="mt-4">For personal data we collect through this Website and our buy-once apps, Perfect Paradox Ltd is the <strong class="text-primary">data controller</strong>. For data inside a Hosted instance, the customer is the controller and Perfect Paradox is the <strong class="text-primary">processor</strong> (Section 5A).</p>
     </section>
 
     <div class="h-[1px] bg-outline-variant/20"></div>
@@ -113,14 +120,15 @@ body {
       <p class="mt-2"><strong class="text-primary">Lawful basis:</strong> Legitimate interest (Art. 6(1)(f)) — website security and performance monitoring.</p>
 
       <h3 class="font-headline font-bold text-lg uppercase text-primary/80 mb-2 mt-6">2.3 Data We Do NOT Collect</h3>
-      <p>This Website does not:</p>
+      <p><strong class="text-primary">On this Website and in our buy-once Mac apps</strong> (the Cloud AI, Self-hosted, and Local models), we do not:</p>
       <ul class="list-none space-y-1 pl-4 mt-2">
         <li>— Require user registration or accounts</li>
-        <li>— Process payments</li>
+        <li>— Process payments ourselves (subscription payments for Hosted services are handled by Paddle as Merchant of Record — see Section 5)</li>
         <li>— Use advertising or third-party tracking</li>
         <li>— Collect sensitive personal data (health, biometric, political, etc.)</li>
         <li>— Profile visitors for marketing purposes</li>
       </ul>
+      <p class="mt-4 text-outline"><strong class="text-primary">Important:</strong> the statements above do <strong class="text-primary">not</strong> apply to our <strong class="text-primary">Hosted services</strong> (C0RTEX, SYN4PSE). Hosted services necessarily involve an account, a monthly subscription, and the processing of customer and end-user data within a private instance. See Section 5A and the product-specific Privacy Policy and DPA.</p>
     </section>
 
     <div class="h-[1px] bg-outline-variant/20"></div>
@@ -198,6 +206,11 @@ body {
               <td class="py-3">Email address, message content</td>
             </tr>
             <tr class="border-b border-outline-variant/10">
+              <td class="py-3 pr-4">Paddle (Paddle.com Market Ltd)</td>
+              <td class="py-3 pr-4">Merchant of Record / payment processing for Hosted subscriptions</td>
+              <td class="py-3">Billing contact, transaction data (Paddle is the seller of record, charges VAT, and handles payment; we do not store your card details)</td>
+            </tr>
+            <tr class="border-b border-outline-variant/10">
               <td class="py-3 pr-4">Law enforcement</td>
               <td class="py-3 pr-4">Legal obligation</td>
               <td class="py-3">Only if compelled by court order or statute</td>
@@ -205,6 +218,26 @@ body {
           </tbody>
         </table>
       </div>
+    </section>
+
+    <div class="h-[1px] bg-outline-variant/20"></div>
+
+    <!-- 5A. Hosted Services -->
+    <section>
+      <h2 class="font-headline font-bold text-2xl uppercase tracking-wider text-primary mb-4">5A. HOSTED SERVICES (C0RTEX, SYN4PSE)</h2>
+      <p class="mb-4">For our <strong class="text-primary">Hosted</strong> products — <strong class="text-primary">C0RTEX</strong> (web chat) and <strong class="text-primary">SYN4PSE</strong> (voice; coming soon) — Perfect Paradox hosts a private, isolated instance for each customer and operates it on their behalf. In this model the roles are different from the rest of this policy:</p>
+      <ul class="list-none space-y-2 pl-4">
+        <li>— The <strong class="text-primary">customer is the data controller</strong> of the data inside their instance (their knowledge base, end-user conversations, and any data derived from them).</li>
+        <li>— <strong class="text-primary">Perfect Paradox is the data processor</strong> for that data, processing it only on the customer's documented instructions to provide the service, under a Data Processing Agreement (Article 28 UK GDPR).</li>
+      </ul>
+      <p class="mt-4">Within a Hosted instance, customer and end-user data is held in a private, isolated, encrypted instance. It is <strong class="text-primary">never sold, never shared for advertising, and never used to train general-purpose AI models</strong>. We engage sub-processors (for example our hosting and, where applicable, LLM/AI providers) only under written contracts with equivalent data-protection obligations.</p>
+      <p class="mt-4">If you are an <strong class="text-primary">end user</strong> (for example, a visitor chatting on a business's website powered by C0RTEX), the business operating that instance is the controller of your data — please consult their own privacy notice.</p>
+      <p class="mt-4">For the full detail of the Hosted regime — including the complete list of sub-processors, international-transfer mechanisms, retention, security measures, and data-subject rights handling — see the C0RTEX product documents rather than relying on this page:</p>
+      <ul class="list-none space-y-1 pl-4 mt-2">
+        <li>— <a href="https://c0rtex.perfectparadox.co.uk/legal/privacy" class="text-primary underline underline-offset-4">C0RTEX Privacy Policy</a></li>
+        <li>— <a href="https://c0rtex.perfectparadox.co.uk/legal/dpa" class="text-primary underline underline-offset-4">C0RTEX Data Processing Agreement</a></li>
+      </ul>
+      <p class="mt-4 text-outline"><strong class="text-primary">SYN4PSE</strong> (voice) will involve call handling, call recording, and speech-to-text transcription, and will be subject to additional privacy terms and consent requirements (including under PECR) before it launches.</p>
     </section>
 
     <div class="h-[1px] bg-outline-variant/20"></div>
@@ -260,12 +293,13 @@ body {
     <!-- 8. Data Security -->
     <section>
       <h2 class="font-headline font-bold text-2xl uppercase tracking-wider text-primary mb-4">8. DATA SECURITY</h2>
-      <p class="mb-4">We implement appropriate measures to protect your data, including:</p>
+      <p class="mb-4">For this Website and our buy-once apps, we implement appropriate measures to protect your data, including:</p>
       <ul class="list-none space-y-1 pl-4">
         <li>— HTTPS/TLS encryption on all website traffic</li>
         <li>— Secure email provider with encryption at rest</li>
-        <li>— Access restricted to authorised personnel only (the Director)</li>
+        <li>— Access restricted to authorised personnel only</li>
       </ul>
+      <p class="mt-4">The technical and organisational measures applicable to our <strong class="text-primary">Hosted services</strong> (including tenant isolation, encryption at rest, role-based access, and incident response) are set out in the C0RTEX Data Processing Agreement (see Section 5A).</p>
       <p class="mt-4">If we discover a data breach involving your personal data, we will notify the ICO within 72 hours and notify you within 48 hours if the breach poses a high risk to your rights.</p>
     </section>
 
